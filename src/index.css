@@ -14,38 +14,48 @@
   }
   
   body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #141414;
-    color: #E5E5E5;
-    line-height: 1.4;
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #000000;
+    color: #FFFFFF;
+    line-height: 1.2;
     overflow-x: hidden;
+    font-weight: 400;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 400;
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
 }
 
 @layer components {
   .netflix-btn-primary {
-    @apply bg-white text-black px-6 py-2 rounded font-medium transition-all duration-200 hover:bg-gray-300 hover:text-black;
+    @apply bg-white text-black px-8 py-3 rounded font-semibold text-lg transition-all duration-200 hover:bg-gray-300 hover:text-black flex items-center gap-2;
   }
   
   .netflix-btn-secondary {
-    @apply bg-gray-600 text-white px-6 py-2 rounded font-medium transition-all duration-200 hover:bg-gray-500;
+    @apply bg-gray-600/80 text-white px-8 py-3 rounded font-semibold text-lg transition-all duration-200 hover:bg-gray-500/80 flex items-center gap-2;
   }
   
   .netflix-card {
-    @apply bg-gray-600 rounded transition-all duration-300 hover:scale-105 hover:shadow-netflix-glow;
+    @apply bg-gray-800 rounded transition-all duration-300 hover:scale-105 hover:shadow-2xl;
   }
   
   .netflix-navbar {
-    @apply fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm transition-all duration-300;
+    @apply fixed top-0 left-0 right-0 z-50 transition-all duration-300;
+  }
+  
+  .netflix-navbar-scrolled {
+    @apply bg-black/90 backdrop-blur-sm;
   }
   
   .netflix-hero {
     @apply relative h-screen w-full bg-cover bg-center bg-no-repeat;
+  }
+  
+  .netflix-hero-overlay {
+    @apply absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent;
   }
   
   .netflix-carousel {
@@ -57,11 +67,23 @@
   }
   
   .netflix-profile-avatar {
-    @apply w-32 h-32 rounded-lg bg-gray-600 transition-all duration-300 hover:scale-110 hover:shadow-netflix-glow cursor-pointer;
+    @apply w-32 h-32 rounded-lg bg-gray-600 transition-all duration-300 hover:scale-110 hover:shadow-2xl cursor-pointer;
   }
   
   .netflix-top10-badge {
     @apply absolute -left-2 -top-2 w-8 h-8 bg-red-600 rounded-full flex items-center justify-center text-white font-bold text-sm;
+  }
+  
+  .netflix-section-title {
+    @apply text-2xl font-bold text-white mb-6 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .netflix-movie-card {
+    @apply bg-gray-800 rounded transition-all duration-300 hover:scale-110 hover:shadow-2xl cursor-pointer flex-shrink-0;
+  }
+  
+  .netflix-nav-item {
+    @apply text-white hover:text-gray-300 transition-colors duration-200 font-medium text-sm;
   }
 }
 
