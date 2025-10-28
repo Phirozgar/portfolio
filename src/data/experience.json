@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "role": "Remote Intern",
+    "organization": "UK Client Website Maintenance",
+    "duration": "2024 - Present",
+    "description": "Maintaining and updating client websites, implementing responsive designs, and optimizing performance for better user experience.",
+    "image": "🌐",
+    "type": "Internship"
+  },
+  {
+    "id": 2,
+    "role": "UI/Frontend Designer & Team Manager",
+    "organization": "Parikshit Student Satellite",
+    "duration": "2023 - Present",
+    "description": "Leading the frontend development team, designing user interfaces for satellite mission control systems, and managing project timelines.",
+    "image": "🚀",
+    "type": "Leadership"
+  },
+  {
+    "id": 3,
+    "role": "Full-Stack Developer",
+    "organization": "Farmer Management Portal",
+    "duration": "2023",
+    "description": "Developed a comprehensive JavaFX application for agricultural data management, including crop tracking and resource optimization features.",
+    "image": "🌾",
+    "type": "Development"
+  },
+  {
+    "id": 4,
+    "role": "Freelance Web Developer",
+    "organization": "Various Clients",
+    "duration": "2023 - Present",
+    "description": "Building custom web applications and websites for small businesses and startups using modern technologies.",
+    "image": "💻",
+    "type": "Freelance"
+  }
+]

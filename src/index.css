@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #141414;
+    color: #E5E5E5;
+    line-height: 1.4;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
+  }
+}
+
+@layer components {
+  .netflix-btn-primary {
+    @apply bg-white text-black px-6 py-2 rounded font-medium transition-all duration-200 hover:bg-gray-300 hover:text-black;
+  }
+  
+  .netflix-btn-secondary {
+    @apply bg-gray-600 text-white px-6 py-2 rounded font-medium transition-all duration-200 hover:bg-gray-500;
+  }
+  
+  .netflix-card {
+    @apply bg-gray-600 rounded transition-all duration-300 hover:scale-105 hover:shadow-netflix-glow;
+  }
+  
+  .netflix-navbar {
+    @apply fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm transition-all duration-300;
+  }
+  
+  .netflix-hero {
+    @apply relative h-screen w-full bg-cover bg-center bg-no-repeat;
+  }
+  
+  .netflix-carousel {
+    @apply relative overflow-hidden;
+  }
+  
+  .netflix-carousel-container {
+    @apply flex space-x-2 transition-transform duration-300 ease-out;
+  }
+  
+  .netflix-profile-avatar {
+    @apply w-32 h-32 rounded-lg bg-gray-600 transition-all duration-300 hover:scale-110 hover:shadow-netflix-glow cursor-pointer;
+  }
+  
+  .netflix-top10-badge {
+    @apply absolute -left-2 -top-2 w-8 h-8 bg-red-600 rounded-full flex items-center justify-center text-white font-bold text-sm;
+  }
+}
+
+@layer utilities {
+  .text-netflix-red {
+    color: #E50914;
+  }
+  
+  .bg-netflix-red {
+    background-color: #E50914;
+  }
+  
+  .border-netflix-red {
+    border-color: #E50914;
+  }
+  
+  .animate-netflix-fade {
+    animation: netflixFade 0.5s ease-in-out;
+  }
+  
+  .animate-netflix-slide {
+    animation: netflixSlide 0.3s ease-out;
+  }
+  
+  @keyframes netflixFade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @keyframes netflixSlide {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}

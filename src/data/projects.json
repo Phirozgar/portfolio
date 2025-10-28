@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "title": "MERN Note App",
+    "description": "Full-stack note-taking application with real-time sync",
+    "tech": ["React", "Node.js", "MongoDB", "Express"],
+    "image": "📝",
+    "liveUrl": "#",
+    "githubUrl": "#",
+    "rank": 1
+  },
+  {
+    "id": 2,
+    "title": "Farmer Management Portal",
+    "description": "JavaFX desktop application for agricultural data management",
+    "tech": ["JavaFX", "Java", "MySQL"],
+    "image": "🌾",
+    "liveUrl": "#",
+    "githubUrl": "#",
+    "rank": 2
+  },
+  {
+    "id": 3,
+    "title": "Parikshit Satellite Website",
+    "description": "Frontend design for student satellite mission control",
+    "tech": ["React", "Tailwind", "Framer Motion"],
+    "image": "🚀",
+    "liveUrl": "#",
+    "githubUrl": "#",
+    "rank": 3
+  },
+  {
+    "id": 4,
+    "title": "UK Client Website",
+    "description": "Remote internship project for UK client maintenance",
+    "tech": ["React", "Node.js", "AWS"],
+    "image": "🌐",
+    "liveUrl": "#",
+    "githubUrl": "#",
+    "rank": 4
+  },
+  {
+    "id": 5,
+    "title": "E-Commerce Platform",
+    "description": "Complete online shopping solution with payment integration",
+    "tech": ["React", "Node.js", "Stripe", "MongoDB"],
+    "image": "🛒",
+    "liveUrl": "#",
+    "githubUrl": "#",
+    "rank": 5
+  },
+  {
+    "id": 6,
+    "title": "Task Management App",
+    "description": "Collaborative project management with real-time updates",
+    "tech": ["React", "Socket.io", "PostgreSQL"],
+    "image": "📋",
+    "liveUrl": "#",
+    "githubUrl": "#",
+    "rank": 6
+  },
+  {
+    "id": 7,
+    "title": "Weather Dashboard",
+    "description": "Beautiful weather app with interactive maps and forecasts",
+    "tech": ["React", "API Integration", "Chart.js"],
+    "image": "🌤️",
+    "liveUrl": "#",
+    "githubUrl": "#",
+    "rank": 7
+  },
+  {
+    "id": 8,
+    "title": "Chat Application",
+    "description": "Real-time messaging with file sharing capabilities",
+    "tech": ["React", "Socket.io", "JWT", "AWS S3"],
+    "image": "💬",
+    "liveUrl": "#",
+    "githubUrl": "#",
+    "rank": 8
+  },
+  {
+    "id": 9,
+    "title": "Data Visualization Tool",
+    "description": "Interactive dashboard for analyzing complex datasets",
+    "tech": ["React", "D3.js", "Python", "FastAPI"],
+    "image": "📊",
+    "liveUrl": "#",
+    "githubUrl": "#",
+    "rank": 9
+  },
+  {
+    "id": 10,
+    "title": "Portfolio Website",
+    "description": "This Netflix-style portfolio showcasing my work",
+    "tech": ["React", "Tailwind", "Framer Motion", "Vite"],
+    "image": "💼",
+    "liveUrl": "#",
+    "githubUrl": "#",
+    "rank": 10
+  }
+]
