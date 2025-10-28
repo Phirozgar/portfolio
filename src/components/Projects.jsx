@@ -13,7 +13,7 @@ const Projects = () => {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <Carousel title="My Top 10 Projects">
+        <Carousel title="Top 10 in India Today — Projects">
           {projectsData.map((project, index) => (
             <motion.div
               key={project.id}

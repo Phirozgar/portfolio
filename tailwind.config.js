@@ -16,9 +16,12 @@ export default {
         'netflix-white': '#FFFFFF',
         'netflix-text': '#E5E5E5',
         'netflix-text-dark': '#B3B3B3',
+        'netflix-bg': '#000000',
+        'netflix-card-bg': '#2F2F2F',
       },
       fontFamily: {
-        'netflix': ['Helvetica Neue', 'Arial', 'sans-serif'],
+        'netflix': ['Netflix Sans', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        'netflix-sans': ['Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
       backgroundImage: {
         'netflix-gradient': 'linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%)',

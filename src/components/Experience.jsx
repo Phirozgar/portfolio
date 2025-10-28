@@ -13,7 +13,7 @@ const Experience = () => {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <Carousel title="New on PHIROZGAR — Experience">
+        <Carousel title="New Releases — Experience">
           {experienceData.map((exp, index) => (
             <motion.div
               key={exp.id}

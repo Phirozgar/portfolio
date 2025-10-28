@@ -13,7 +13,7 @@ const Education = () => {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <Carousel title="Today's Top Picks for You — Education">
+        <Carousel title="Continue Watching — Education">
           {educationData.map((edu, index) => (
             <motion.div
               key={edu.id}

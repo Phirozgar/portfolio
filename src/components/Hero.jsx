@@ -11,71 +11,87 @@ const Hero = () => {
 
   return (
     <section id="home" className="netflix-hero">
-      {/* Background Image with Gradient Overlay */}
+      {/* Netflix-style Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-contain bg-no-repeat"
         style={{
-          backgroundImage: `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23E50914;stop-opacity:0.8" /><stop offset="50%" style="stop-color:%236A5ACD;stop-opacity:0.6" /><stop offset="100%" style="stop-color:%23000000;stop-opacity:0.9" /></linearGradient></defs><rect width="100%" height="100%" fill="url(%23grad)"/></svg>')`
+          backgroundImage: `url('/images/hero/phiroz.jpg')`,
+          backgroundSize: 'contain',
+          backgroundPosition: 'right center'
         }}
       />
       
-      {/* Netflix-style Gradient Overlay */}
-      <div className="absolute inset-0 bg-netflix-hero-gradient"></div>
+      {/* Netflix Hero Overlay */}
+      <div className="netflix-hero-overlay"></div>
       
-      {/* Content */}
+      {/* Content - Netflix Style Positioning */}
       <div className="relative z-10 h-full flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="max-w-2xl">
+          <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              className="space-y-6"
+              transition={{ duration: 1.2, ease: "easeOut" }}
+              className="space-y-8"
             >
-              {/* Main Title */}
+              {/* Main Title - Netflix Money Heist Style */}
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.8 }}
-                className="text-6xl lg:text-8xl font-netflix font-bold text-white leading-tight"
+                transition={{ delay: 0.4, duration: 0.8 }}
+                className="text-5xl lg:text-6xl font-bold text-white leading-none tracking-tight"
+                style={{ 
+                  fontFamily: 'Inter, Helvetica Neue, Arial, sans-serif',
+                  textShadow: '2px 2px 4px rgba(0,0,0,0.8)',
+                  letterSpacing: '-0.02em'
+                }}
               >
                 PHIROZGAR IRANI
               </motion.h1>
 
-              {/* Subtitle */}
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-                className="text-2xl lg:text-3xl text-gray-300 font-netflix"
-              >
-                Computer Science Student @ MIT Manipal
-              </motion.p>
-
-              {/* Tech Stack */}
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7, duration: 0.8 }}
-                className="text-lg text-gray-400 font-netflix"
-              >
-                I can code in Java, React, Node.js, Express, MongoDB, and more!
-              </motion.p>
-
-              {/* Action Buttons */}
+              {/* Subtitle - Netflix Show Description Style */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.9, duration: 0.8 }}
-                className="flex flex-col sm:flex-row gap-4 pt-4"
+                transition={{ delay: 0.6, duration: 0.8 }}
+                className="space-y-4"
+              >
+                <p className="text-2xl lg:text-3xl text-white font-medium leading-relaxed"
+                   style={{ 
+                     fontFamily: 'Inter, Helvetica Neue, Arial, sans-serif',
+                     textShadow: '1px 1px 2px rgba(0,0,0,0.8)'
+                   }}
+                >
+                  3rd Year Computer Science Student <br/>@ MIT Manipal
+                </p>
+                
+                <p className="text-lg text-gray-200 max-w-2xl leading-relaxed"
+                   style={{ 
+                     fontFamily: 'Inter, Helvetica Neue, Arial, sans-serif',
+                     textShadow: '1px 1px 2px rgba(0,0,0,0.8)'
+                   }}
+                >
+                  Frontend | AI Applications Developer
+                  <br/>I use my skills and creativity to build software solutions that teach me new skills and solve my problems..
+                </p>
+              </motion.div>
+
+              {/* Action Buttons - Netflix Style */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.8 }}
+                className="flex flex-col sm:flex-row gap-4 pt-6"
               >
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => scrollToSection('#projects')}
-                  className="netflix-btn-primary text-lg px-8 py-3 flex items-center justify-center"
+                  className="netflix-btn-primary"
                 >
-                  <span className="mr-2">▶</span>
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
                   View My Work
                 </motion.button>
                 
@@ -83,9 +99,11 @@ const Hero = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => scrollToSection('#contact')}
-                  className="netflix-btn-secondary text-lg px-8 py-3 flex items-center justify-center border border-gray-500"
+                  className="netflix-btn-secondary"
                 >
-                  <span className="mr-2">ℹ️</span>
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                   More Info
                 </motion.button>
               </motion.div>
@@ -94,8 +112,8 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Netflix-style Bottom Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent"></div>
+      {/* Netflix Bottom Fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
     </section>
   )
 }

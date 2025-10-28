@@ -15,15 +15,15 @@ const Card = ({
   const getCardSize = () => {
     switch (type) {
       case 'education':
-        return 'w-64 h-40'
+        return 'w-56 h-36'
       case 'skill':
         return 'w-48 h-32'
       case 'project':
-        return 'w-56 h-80'
+        return 'w-56 h-36'
       case 'experience':
-        return 'w-80 h-48'
+        return 'w-56 h-36'
       default:
-        return 'w-56 h-80'
+        return 'w-56 h-36'
     }
   }
 
@@ -46,37 +46,61 @@ const Card = ({
         </div>
       )}
 
-      {/* Card Content */}
-      <div className="netflix-card h-full relative overflow-hidden">
+      {/* Card Content - Netflix Movie Card Style */}
+      <div className="netflix-movie-card h-full relative overflow-hidden group">
         {/* Background Image/Icon */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-600 to-gray-500 flex items-center justify-center text-6xl">
-          {image}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: image.startsWith('/images/') || image.startsWith('http') || image.startsWith('/') 
+              ? `url(${image})` 
+              : 'none'
+          }}
+        >
+          {/* Fallback icon if image fails to load or is emoji */}
+          {(!image.startsWith('/images/') && !image.startsWith('http') && !image.startsWith('/')) && (
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center text-5xl">
+              {image}
+            </div>
+          )}
         </div>
+        
+        {/* Debug: Show image path for troubleshooting */}
+        {process.env.NODE_ENV === 'development' && (
+          <div className="absolute top-1 left-1 bg-black/50 text-white text-xs p-1 rounded">
+            {image}
+          </div>
+        )}
 
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        {/* Netflix-style Hover Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-        {/* Content */}
+        {/* Content - Netflix Style with Better Spacing */}
         <div className="relative z-10 h-full flex flex-col justify-end p-4">
-          {/* Title */}
-          <h3 className="text-white font-netflix font-bold text-lg mb-2 group-hover:text-red-600 transition-colors duration-300">
+          {/* Title - Netflix Style */}
+          <h3 className="text-white font-bold text-base mb-2 group-hover:text-red-600 transition-colors duration-300 truncate"
+              style={{ fontFamily: 'Inter, Helvetica Neue, Arial, sans-serif' }}
+          >
             {title}
           </h3>
 
-          {/* Description */}
+          {/* Description - Netflix Style */}
           {description && (
-            <p className="text-gray-400 text-sm mb-3 line-clamp-2">
+            <p className="text-gray-300 text-sm mb-3 line-clamp-2 leading-relaxed"
+               style={{ fontFamily: 'Inter, Helvetica Neue, Arial, sans-serif' }}
+            >
               {description}
             </p>
           )}
 
-          {/* Tech Stack */}
+          {/* Tech Stack - Netflix Style */}
           {tech.length > 0 && (
-            <div className="flex flex-wrap gap-1 mb-3">
-              {tech.slice(0, 3).map((item, index) => (
+            <div className="flex flex-wrap gap-2 mb-3">
+              {tech.slice(0, 2).map((item, index) => (
                 <span
                   key={index}
-                  className="px-2 py-1 bg-red-600/20 text-red-600 text-xs rounded"
+                  className="px-2 py-1 bg-red-600/30 text-red-400 text-xs rounded font-medium"
+                  style={{ fontFamily: 'Inter, Helvetica Neue, Arial, sans-serif' }}
                 >
                   {item}
                 </span>
@@ -84,9 +108,9 @@ const Card = ({
             </div>
           )}
 
-          {/* Action Buttons - Show on Hover */}
+          {/* Action Buttons - Netflix Hover Style */}
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 5 }}
             whileHover={{ opacity: 1, y: 0 }}
             className="flex gap-2"
           >
@@ -94,7 +118,8 @@ const Card = ({
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex-1 bg-red-600 text-white text-xs py-2 px-3 rounded font-netflix font-medium hover:bg-red-700 transition-colors duration-200"
+                className="flex-1 bg-red-600 text-white text-sm py-2 px-3 rounded font-semibold hover:bg-red-700 transition-colors duration-200"
+                style={{ fontFamily: 'Inter, Helvetica Neue, Arial, sans-serif' }}
               >
                 View
               </motion.button>
@@ -103,7 +128,8 @@ const Card = ({
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex-1 bg-gray-600 text-white text-xs py-2 px-3 rounded font-netflix font-medium hover:bg-gray-500 transition-colors duration-200"
+                className="flex-1 bg-gray-700 text-white text-sm py-2 px-3 rounded font-semibold hover:bg-gray-600 transition-colors duration-200"
+                style={{ fontFamily: 'Inter, Helvetica Neue, Arial, sans-serif' }}
               >
                 GitHub
               </motion.button>
@@ -111,7 +137,7 @@ const Card = ({
           </motion.div>
         </div>
 
-        {/* Hover Glow Effect */}
+        {/* Netflix Hover Border Effect */}
         <div className="absolute inset-0 border-2 border-transparent group-hover:border-red-600 rounded transition-colors duration-300"></div>
       </div>
     </motion.div>

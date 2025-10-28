@@ -26,7 +26,7 @@ const Carousel = ({ title, children, className = "" }) => {
   return (
     <div className={`relative group ${className}`}>
       {/* Section Title */}
-      <h2 className="text-2xl font-netflix font-bold text-white mb-4 px-4 sm:px-6 lg:px-8">
+      <h2 className="netflix-section-title">
         {title}
       </h2>
 
@@ -63,7 +63,7 @@ const Carousel = ({ title, children, className = "" }) => {
           ref={scrollRef}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          className="flex space-x-2 overflow-x-auto scrollbar-hide px-4 sm:px-6 lg:px-8 py-4"
+          className="flex space-x-4 overflow-x-auto scrollbar-hide px-4 sm:px-6 lg:px-8 py-6"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {children}
