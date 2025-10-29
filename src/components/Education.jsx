@@ -27,7 +27,6 @@ const Education = () => {
                 description={`${edu.degree} • ${edu.duration}`}
                 image={edu.image}
                 type="education"
-                className="hover:shadow-netflix-glow"
               />
             </motion.div>
           ))}

@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import Carousel from './Carousel'
-import Card from './Card'
+import Top10Card from './Top10Card'
+import ProjectModal from './ProjectModal'
 import projectsData from '../data/projects.json'
 
 const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const handleCardClick = (project) => {
+    setSelectedProject(project)
+    setIsModalOpen(true)
+  }
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false)
+    setSelectedProject(null)
+  }
+
   return (
     <section id="projects" className="py-12 bg-black">
       <motion.div
@@ -22,7 +36,7 @@ const Projects = () => {
               transition={{ delay: index * 0.1, duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <Card
+              <Top10Card
                 title={project.title}
                 description={project.description}
                 image={project.image}
@@ -30,13 +44,21 @@ const Projects = () => {
                 liveUrl={project.liveUrl}
                 githubUrl={project.githubUrl}
                 rank={project.rank}
+                status={project.status}
                 type="project"
-                className="hover:shadow-netflix-glow"
+                onCardClick={() => handleCardClick(project)}
               />
             </motion.div>
           ))}
         </Carousel>
       </motion.div>
+
+      {/* Project Modal */}
+      <ProjectModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        project={selectedProject}
+      />
     </section>
   )
 }

@@ -1,18 +1,19 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useRef as useRefAlias } from 'react'
 import { motion } from 'framer-motion'
 
 const Carousel = ({ title, children, className = "" }) => {
   const scrollRef = useRef(null)
   const [isScrolling, setIsScrolling] = useState(false)
+  const touchStartRef = useRef({ x: 0, y: 0 })
 
   const scroll = (direction) => {
     if (scrollRef.current) {
       const scrollAmount = 300
       const currentScroll = scrollRef.current.scrollLeft
-      const targetScroll = direction === 'left' 
-        ? currentScroll - scrollAmount 
+      const targetScroll = direction === 'left'
+        ? currentScroll - scrollAmount
         : currentScroll + scrollAmount
-      
+
       scrollRef.current.scrollTo({
         left: targetScroll,
         behavior: 'smooth'
@@ -22,6 +23,51 @@ const Carousel = ({ title, children, className = "" }) => {
 
   const handleMouseEnter = () => setIsScrolling(true)
   const handleMouseLeave = () => setIsScrolling(false)
+
+  // Forward vertical wheel to page; keep horizontal wheel for row
+  const handleWheel = (e) => {
+    if (!scrollRef.current) return
+
+    const isVerticalIntent = Math.abs(e.deltaY) > Math.abs(e.deltaX)
+
+    if (isVerticalIntent) {
+      // Forward vertical scroll to the page and block row from capturing it
+      window.scrollBy({ top: e.deltaY, left: 0, behavior: 'auto' })
+      e.preventDefault()
+      return
+    }
+
+    // Horizontal wheel should scroll the row
+    if (e.deltaX !== 0) {
+      scrollRef.current.scrollLeft += e.deltaX
+      e.preventDefault()
+      return
+    }
+  }
+
+  // Touch handling: allow horizontal swipe; forward vertical to page
+  const handleTouchStart = (e) => {
+    const t = e.touches[0]
+    touchStartRef.current = { x: t.clientX, y: t.clientY }
+  }
+
+  const handleTouchMove = (e) => {
+    if (!scrollRef.current) return
+    const t = e.touches[0]
+    const dx = t.clientX - touchStartRef.current.x
+    const dy = t.clientY - touchStartRef.current.y
+
+    if (Math.abs(dy) > Math.abs(dx)) {
+      // Vertical intent: let the page scroll; prevent the row from hijacking
+      // Do not call preventDefault so the page can scroll naturally
+      return
+    }
+
+    // Horizontal intent: consume and scroll row
+    scrollRef.current.scrollLeft -= dx
+    touchStartRef.current = { x: t.clientX, y: t.clientY }
+    e.preventDefault()
+  }
 
   return (
     <div className={`relative group ${className}`}>
@@ -61,10 +107,13 @@ const Carousel = ({ title, children, className = "" }) => {
         {/* Scrollable Content */}
         <div
           ref={scrollRef}
+          onWheel={handleWheel}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          className="flex space-x-4 overflow-x-auto scrollbar-hide px-4 sm:px-6 lg:px-8 py-6"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          className="flex space-x-12 overflow-x-auto overflow-y-hidden pl-12 pr-4 sm:pl-16 sm:pr-6 lg:pl-20 lg:pr-8 py-6"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', touchAction: 'pan-x', overscrollBehaviorY: 'contain' }}
         >
           {children}
         </div>

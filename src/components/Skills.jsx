@@ -28,7 +28,6 @@ const Skills = () => {
                 image={skill.image}
                 tech={[skill.category, skill.level]}
                 type="skill"
-                className="hover:shadow-netflix-glow"
               />
             </motion.div>
           ))}

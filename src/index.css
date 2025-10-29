@@ -71,7 +71,27 @@
   }
   
   .netflix-top10-badge {
-    @apply absolute -left-2 -top-2 w-8 h-8 bg-red-600 rounded-full flex items-center justify-center text-white font-bold text-sm;
+    @apply absolute -left-16 top-0 w-12 h-full bg-red-600 flex items-center justify-center text-white font-bold text-4xl z-20;
+  }
+  
+  .netflix-top10-ranking-number {
+    @apply absolute -left-4 sm:-left-6 top-1/2 transform -translate-y-1/2 text-gray-100 font-black text-7xl sm:text-8xl lg:text-9xl opacity-60 z-0;
+    font-family: 'Poppins', sans-serif;
+    -webkit-text-stroke: 3px rgba(255, 255, 255, 0.7);
+    text-stroke: 3px rgba(255, 255, 255, 0.7);
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 50px;
+    justify-content: center;
+  }
+  
+  .netflix-status-tag {
+    @apply absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-red-600 text-white font-bold text-xs px-4 py-2 rounded-md shadow-lg z-10;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.5px;
   }
   
   .netflix-section-title {
@@ -79,7 +99,7 @@
   }
   
   .netflix-movie-card {
-    @apply bg-gray-800 rounded transition-all duration-300 hover:scale-110 hover:shadow-2xl cursor-pointer flex-shrink-0;
+    @apply bg-gray-800 rounded-lg transition-all duration-300 cursor-pointer flex-shrink-0 overflow-hidden;
   }
   
   .netflix-nav-item {

@@ -49,7 +49,7 @@ const ProfileSelect = ({ onProfileSelect }) => {
               onClick={() => handleProfileClick(profile.id)}
               className="group cursor-pointer"
             >
-              <div className={`netflix-profile-avatar bg-gradient-to-br ${profile.color} flex flex-col items-center justify-center group-hover:shadow-netflix-glow`}>
+              <div className={`netflix-profile-avatar bg-gradient-to-br ${profile.color} flex flex-col items-center justify-center`}>
                 <motion.div
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}

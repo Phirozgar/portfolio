@@ -28,7 +28,6 @@ const Experience = () => {
                 image={exp.image}
                 tech={[exp.type]}
                 type="experience"
-                className="hover:shadow-netflix-glow"
               />
             </motion.div>
           ))}
