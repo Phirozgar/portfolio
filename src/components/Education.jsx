@@ -1,10 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import Carousel from './Carousel'
 import Card from './Card'
+import ProjectModal from './ProjectModal'
 import educationData from '../data/education.json'
 
 const Education = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selected, setSelected] = useState(null)
+
+  const handleCardClick = (edu) => {
+    // Map education item to modal-friendly object
+    setSelected({
+      title: edu.institution,
+      description: `${edu.degree} • ${edu.duration}`,
+      image: edu.image,
+      tech: ['Education', 'Academic'],
+      liveUrl: '#',
+      githubUrl: '#'
+    })
+    setIsModalOpen(true)
+  }
+
+  const handleClose = () => {
+    setIsModalOpen(false)
+    setSelected(null)
+  }
   return (
     <section id="education" className="py-12 bg-black">
       <motion.div
@@ -27,11 +48,13 @@ const Education = () => {
                 description={`${edu.degree} • ${edu.duration}`}
                 image={edu.image}
                 type="education"
+                onCardClick={() => handleCardClick(edu)}
               />
             </motion.div>
           ))}
         </Carousel>
       </motion.div>
+      <ProjectModal isOpen={isModalOpen} onClose={handleClose} project={selected} />
     </section>
   )
 }

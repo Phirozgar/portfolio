@@ -47,7 +47,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.9 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="relative w-full max-w-6xl mx-4 bg-black rounded-lg overflow-hidden shadow-2xl"
+          className="relative w-full max-w-3xl md:max-w-4xl mx-4 bg-black rounded-lg overflow-hidden shadow-2xl max-h-[90vh] md:max-h-[92vh] my-6 md:my-10 flex flex-col"
         >
           {/* Close Button */}
           <motion.button
@@ -62,7 +62,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
           </motion.button>
 
           {/* Video/Image Section */}
-          <div className="relative h-96 bg-gray-900">
+          <div className="relative bg-gray-900" style={{ height: '48vh', minHeight: '260px' }}>
             <div 
               className="w-full h-full bg-cover bg-center bg-no-repeat"
               style={{
@@ -125,7 +125,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
           </div>
 
           {/* Content Section */}
-          <div className="p-8">
+          <div className="p-6 md:p-8 overflow-y-auto">
             {/* Metadata Badges */}
             <div className="flex items-center gap-3 mb-4">
               <span className="px-3 py-1 bg-gray-700 text-white text-sm rounded font-medium">

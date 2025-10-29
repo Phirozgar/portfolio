@@ -1,10 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import Carousel from './Carousel'
 import Card from './Card'
+import ProjectModal from './ProjectModal'
 import skillsData from '../data/skills.json'
 
 const Skills = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selected, setSelected] = useState(null)
+
+  const handleCardClick = (skill) => {
+    setSelected({
+      title: skill.name,
+      description: skill.description,
+      image: skill.image,
+      tech: [skill.category, skill.level],
+      liveUrl: '#',
+      githubUrl: '#'
+    })
+    setIsModalOpen(true)
+  }
+
+  const handleClose = () => {
+    setIsModalOpen(false)
+    setSelected(null)
+  }
   return (
     <section id="skills" className="py-12 bg-black">
       <motion.div
@@ -28,11 +48,13 @@ const Skills = () => {
                 image={skill.image}
                 tech={[skill.category, skill.level]}
                 type="skill"
+                onCardClick={() => handleCardClick(skill)}
               />
             </motion.div>
           ))}
         </Carousel>
       </motion.div>
+      <ProjectModal isOpen={isModalOpen} onClose={handleClose} project={selected} />
     </section>
   )
 }
