@@ -37,7 +37,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+          className="absolute inset-0 bg-black/15"
           onClick={onClose}
         />
 
@@ -125,7 +125,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
           </div>
 
           {/* Content Section */}
-          <div className="p-6 md:p-8 overflow-y-auto">
+          <div className="p-6 md:p-8 overflow-y-auto scrollbar-hide">
             {/* Metadata Badges */}
             <div className="flex items-center gap-3 mb-4">
               <span className="px-3 py-1 bg-gray-700 text-white text-sm rounded font-medium">
