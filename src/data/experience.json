@@ -1,38 +1,29 @@
 [
   {
     "id": 1,
-    "role": "Remote Intern",
-    "organization": "UK Client Website Maintenance",
-    "duration": "2024 - Present",
-    "description": "Maintaining and updating client websites, implementing responsive designs, and optimizing performance for better user experience.",
+    "role": "Web Maintenance Intern",
+    "organization": "ThirdEye Legal, Digital and Marketing Technologies LLP",
+    "duration": "December 2024 - August 2025",
+    "description": "Maintaining and updating client website in the UK, implementing responsive designs, and improving designs for better user experience.",
     "image": "/images/experience/TDA1.jpg",
-    "type": "Internship"
+    "type": "Remote Internship"
   },
   {
     "id": 2,
-    "role": "UI/Frontend Designer & Team Manager",
+    "role": "UI/Frontend Developer & Management Head",
     "organization": "Parikshit Student Satellite",
-    "duration": "2023 - Present",
-    "description": "Leading the frontend development team, designing user interfaces for satellite mission control systems, and managing project timelines.",
-    "image": "🚀",
-    "type": "Leadership"
+    "duration": "Jan 2025 - Present",
+    "description": "Leading the frontend development team, designing user interfaces for our official website, and managing project timelines.",
+    "image": "/portfolio/parikshit-bt.jpeg",
+    "type": "College funded Student Project"
   },
   {
     "id": 3,
-    "role": "Full-Stack Developer",
-    "organization": "Farmer Management Portal",
-    "duration": "2023",
-    "description": "Developed a comprehensive JavaFX application for agricultural data management, including crop tracking and resource optimization features.",
-    "image": "🌾",
-    "type": "Development"
-  },
-  {
-    "id": 4,
-    "role": "Freelance Web Developer",
-    "organization": "Various Clients",
-    "duration": "2023 - Present",
-    "description": "Building custom web applications and websites for small businesses and startups using modern technologies.",
-    "image": "💻",
-    "type": "Freelance"
+    "role": "Full Stack Developer",
+    "organization": "ThirdEye Legal, Digital and Marketing Technologies LLP",
+    "duration": "May 2025 - July 2025",
+    "description": "Developing a financial dashboard for my client's finances and debtors.",
+    "image": "/images/projects/dashboard.png",
+    "type": "Remote Internship"
   }
 ]

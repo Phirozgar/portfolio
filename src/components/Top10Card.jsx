@@ -35,11 +35,6 @@ const Top10Card = ({
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
-      whileHover={{ 
-        scale: 1.35,
-        zIndex: 10,
-        transition: { duration: 0.2 }
-      }}
       viewport={{ once: true }}
       className={`${getCardSize()} ${className} flex-shrink-0 relative group cursor-pointer`}
       onClick={onCardClick}
@@ -51,11 +46,11 @@ const Top10Card = ({
         </div>
       )}
 
-      {/* Card Content - Netflix Movie Card Style */}
-      <div className="netflix-movie-card h-full relative overflow-hidden group ml-6">
+      {/* Card Content - Netflix Movie Card Style with pop-out effect */}
+      <div className="absolute inset-0 netflix-movie-card h-full w-full relative overflow-hidden group ml-6 transform transition-all duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-4 group-hover:z-20 group-hover:slide-fwd-center rounded-sm">
         {/* Background Image/Icon */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat rounded-sm"
           style={{
             backgroundImage: image.startsWith('/images/') || image.startsWith('http') || image.startsWith('/') 
               ? `url(${image})` 
@@ -64,7 +59,7 @@ const Top10Card = ({
         >
           {/* Fallback icon if image fails to load or is emoji */}
           {(!image.startsWith('/images/') && !image.startsWith('http') && !image.startsWith('/')) && (
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center text-5xl">
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center text-5xl rounded-sm">
               {image}
             </div>
           )}

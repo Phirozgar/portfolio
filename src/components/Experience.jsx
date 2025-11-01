@@ -26,14 +26,14 @@ const Experience = () => {
     setSelected(null)
   }
   return (
-    <section id="experience" className="py-2 bg-black">
+    <section id="experience" className="py-2 bg-black relative z-[1]">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <Carousel title="New Releases — Experience">
+        <Carousel title="New Releases — Experience" className='pl-4'>
           {experienceData.map((exp, index) => (
             <motion.div
               key={exp.id}

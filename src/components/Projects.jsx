@@ -20,14 +20,14 @@ const Projects = () => {
   }
 
   return (
-    <section id="projects" className="py-8 bg-black">
+    <section id="projects" className="py-2 bg-black relative z-[1]">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <Carousel title="Top 10 in India Today — Projects">
+        <Carousel title="Top 10 in India Today — Projects" className='pl-4'>
           {projectsData.map((project, index) => (
             <motion.div
               key={project.id}

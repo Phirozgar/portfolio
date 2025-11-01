@@ -27,7 +27,7 @@ const Education = () => {
     setSelected(null)
   }
   return (
-    <section id="education" className="py-2 bg-black">
+    <section id="education" className="py-2 bg-black relative z-[1]">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

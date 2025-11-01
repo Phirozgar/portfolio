@@ -26,14 +26,14 @@ const Skills = () => {
     setSelected(null)
   }
   return (
-    <section id="skills" className="py-8 bg-black">
+    <section id="skills" className="py-2 bg-black relative z-[1]">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <Carousel title="Trending Now — Skills">
+        <Carousel title="Trending Now — Skills" className='pl-4'>
           {skillsData.map((skill, index) => (
             <motion.div
               key={skill.id}

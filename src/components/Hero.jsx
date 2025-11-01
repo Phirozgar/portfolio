@@ -10,21 +10,21 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="netflix-hero" >
-      {/* Netflix-style Background Image */}
+    <section id="home" className="netflix-hero relative" >
+      {/* Netflix-style Background Image - covers entire hero section */}
       <div 
-        className="absolute inset-0 bg-contain bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-no-repeat z-0"
         style={{
-          backgroundImage: `url('public/portfolio/phiroz.png')`,
-          backgroundSize: 'contain',
+          backgroundImage: `url('/portfolio/phiroz.png')`,
+          backgroundSize: 'cover',
           backgroundPosition: 'right center'
         }}
       />
       
       {/* Netflix Hero Overlay */}
-      <div className="netflix-hero-overlay"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent z-0"></div>
       
-      {/* Content - Netflix Style Positioning */}
+      {/* Content - Netflix Style Positioning - higher z-index */}
       <div className="relative z-10 h-full flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-3xl">
@@ -32,7 +32,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
-              className="space-y-4"
+              className="space-y-4 relative z-10"
             >
               {/* Main Title - Netflix Money Heist Style */}
               <motion.h1

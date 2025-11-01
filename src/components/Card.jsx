@@ -22,24 +22,16 @@ const Card = ({
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 1 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      whileHover={{ 
-        scale: 1.5,
-        zIndex: 50,
-        transition: { duration: 0.25, ease: "easeInOut" }
-      }}
-      viewport={{ once: true }}
+    <div
       className={`${getCardSize()} ${className} flex-shrink-0 relative group cursor-pointer`}
       onClick={onCardClick}
     >
-      {/* Card Content - Netflix Movie Card Style */}
-      <div className="netflix-movie-card h-full relative overflow-hidden group rounded-sm">
+      {/* Card Content - Netflix Movie Card Style with pop-out effect */}
+      <div className="absolute inset-0 netflix-movie-card h-full w-full relative overflow-hidden rounded-sm transform transition-all duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-4 group-hover:z-20 group-hover:slide-fwd-center">
         {/* Image Section - Fill Card */}
         <div className="relative h-full w-full overflow-hidden">
           <div 
-            className="w-full h-full bg-cover bg-center bg-no-repeat"
+            className="w-full h-full bg-cover bg-center bg-no-repeat rounded-sm"
             style={{
               backgroundImage: image.startsWith('/images/') || image.startsWith('http') || image.startsWith('/') 
                 ? `url(${image})` 
@@ -48,7 +40,7 @@ const Card = ({
           >
             {/* Fallback icon if image fails to load or is emoji */}
             {(!image.startsWith('/images/') && !image.startsWith('http') && !image.startsWith('/')) && (
-              <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center text-5xl">
+              <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center text-5xl rounded-sm">
                 {image}
               </div>
             )}
@@ -63,9 +55,8 @@ const Card = ({
             </h3>
           </div>
         </div>
-
       </div>
-    </motion.div>
+    </div>
   )
 }
 
