@@ -4,8 +4,10 @@ import { motion } from 'framer-motion'
 const Top10Card = ({ 
   title, 
   description, 
-  image, 
-  tech = [], 
+  image,
+  tech = [],
+  date,
+  readingTime, 
   liveUrl, 
   githubUrl, 
   rank = null,
@@ -17,15 +19,15 @@ const Top10Card = ({
   const getCardSize = () => {
     switch (type) {
       case 'education':
-        return 'w-56 h-36'
+        return 'w-48 h-48'
       case 'skill':
-        return 'w-48 h-32'
+        return 'w-44 h-44'
       case 'project':
-        return 'w-56 h-36'
+        return 'w-48 h-48'
       case 'experience':
-        return 'w-56 h-36'
+        return 'w-48 h-48'
       default:
-        return 'w-56 h-36'
+        return 'w-48 h-48'
     }
   }
 
@@ -68,8 +70,7 @@ const Top10Card = ({
           )}
         </div>
 
-        {/* Netflix-style Hover Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        {/* Hover overlay removed for minimal look */}
       </div>
     </motion.div>
   )

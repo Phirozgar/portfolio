@@ -51,7 +51,8 @@
   }
   
   .netflix-hero {
-    @apply relative h-screen w-full bg-cover bg-center bg-no-repeat;
+    @apply relative w-full bg-cover bg-center bg-no-repeat;
+    height: 85vh;
   }
   
   .netflix-hero-overlay {
@@ -99,7 +100,7 @@
   }
   
   .netflix-movie-card {
-    @apply bg-gray-800 rounded-lg transition-all duration-300 cursor-pointer flex-shrink-0 overflow-hidden;
+    @apply bg-gray-800 rounded-md transition-all duration-300 cursor-pointer flex-shrink-0 overflow-hidden;
   }
   
   .netflix-nav-item {

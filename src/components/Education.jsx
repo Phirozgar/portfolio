@@ -27,14 +27,14 @@ const Education = () => {
     setSelected(null)
   }
   return (
-    <section id="education" className="py-12 bg-black">
+    <section id="education" className="py-2 bg-black">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <Carousel title="Continue Watching — Education">
+        <Carousel title="Continue Watching — Education" className='pl-4'>
           {educationData.map((edu, index) => (
             <motion.div
               key={edu.id}

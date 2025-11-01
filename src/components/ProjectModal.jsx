@@ -98,7 +98,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z"/>
                   </svg>
-                  View Project
+                  View More
                 </motion.button>
 
                 <motion.button
@@ -129,13 +129,13 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
             {/* Metadata Badges */}
             <div className="flex items-center gap-3 mb-4">
               <span className="px-3 py-1 bg-gray-700 text-white text-sm rounded font-medium">
-                2024
+                {project.date}
               </span>
               <span className="px-3 py-1 bg-gray-700 text-white text-sm rounded font-medium">
-                5 min read
+                {project.readingTime} min read
               </span>
               <span className="px-3 py-1 bg-gray-700 text-white text-sm rounded font-medium">
-                {project.tech[0] || 'React'}
+                {project.tech[0]}
               </span>
             </div>
 

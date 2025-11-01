@@ -72,7 +72,7 @@ const Carousel = ({ title, children, className = "" }) => {
   return (
     <div className={`relative group ${className}`}>
       {/* Section Title */}
-      <h2 className="netflix-section-title">
+      <h2 className="netflix-section-title  p-0 m-0">
         {title}
       </h2>
 
@@ -112,7 +112,7 @@ const Carousel = ({ title, children, className = "" }) => {
           onTouchMove={handleTouchMove}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          className="flex space-x-12 overflow-x-auto overflow-y-hidden pl-12 pr-4 sm:pl-16 sm:pr-6 lg:pl-20 lg:pr-8 py-6"
+          className="flex space-x-2 overflow-x-auto overflow-y-visible pl-4 pr-4 sm:pl-6 sm:pr-6 lg:pl-8 lg:pr-8 py-4"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', touchAction: 'pan-x', overscrollBehaviorY: 'contain' }}
         >
           {children}

@@ -6,7 +6,7 @@ const ProfileSelect = ({ onProfileSelect }) => {
     { id: 'student', name: 'Student', icon: '🎓', color: 'from-blue-500 to-purple-600' },
     { id: 'recruiter', name: 'Recruiter', icon: '💼', color: 'from-green-500 to-blue-600' },
     { id: 'kevin', name: 'Kevin Feige', icon: '🎬', color: 'from-red-500 to-pink-600' },
-    { id: 'mom', name: 'Mom', icon: '❤️', color: 'from-pink-500 to-red-600' }
+    { id: 'mom', name: 'Mom', icon: '❤️', color: 'from-pink-500 to-purple-600' }
   ]
 
   const handleProfileClick = (profileId) => {
@@ -73,6 +73,11 @@ const ProfileSelect = ({ onProfileSelect }) => {
         >
           <p className="text-gray-400 text-lg">
             Click on "Recruiter" to view the portfolio
+            <span className="text-xs">
+            <br/>Click on "Student" to view my college journey so far (It's my blog 😅)
+            <br/>Click on "Kevin Feige" to see my movie reviews and thoughts
+            <br/>Click on "Mom" to see a special message for my mom
+            </span>
           </p>
         </motion.div>
       </div>

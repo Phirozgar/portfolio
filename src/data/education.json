@@ -3,7 +3,7 @@
     "id": 1,
     "institution": "MIT Manipal",
     "degree": "B.Tech Computer Science",
-    "duration": "2022 - 2026",
+    "duration": "2023 - 2027",
     "image": "/images/education/manipal1.jpg",
     "description": "Pursuing Bachelor of Technology in Computer Science with focus on software development and system design."
   },
@@ -13,14 +13,6 @@
     "degree": "Science Stream",
     "duration": "2020 - 2022",
     "image": "/images/education/thakurpublicschool.jpg",
-    "description": "Completed higher secondary education with Physics, Chemistry, and Mathematics."
+    "description": "Completed primary, secondary and higher secondary education with Physics, Chemistry, and Mathematics."
   },
-  {
-    "id": 3,
-    "institution": "Online Courses",
-    "degree": "Full-Stack Development",
-    "duration": "2023 - Present",
-    "image": "💻",
-    "description": "Self-paced learning in modern web technologies and frameworks."
-  }
 ]

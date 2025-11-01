@@ -20,7 +20,7 @@ const Projects = () => {
   }
 
   return (
-    <section id="projects" className="py-12 bg-black">
+    <section id="projects" className="py-8 bg-black">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -41,6 +41,8 @@ const Projects = () => {
                 description={project.description}
                 image={project.image}
                 tech={project.tech}
+                date={project.date}
+                readingTime={project.readingTime}
                 liveUrl={project.liveUrl}
                 githubUrl={project.githubUrl}
                 rank={project.rank}
