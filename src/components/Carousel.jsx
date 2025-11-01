@@ -78,10 +78,10 @@ const Carousel = ({ title, children, className = "" }) => {
 
   return (
     <div className={`relative group ${className}`}>
-      {/* Section Title */}
-      <h2 className="netflix-section-title  p-0 m-0">
+      {/* Section Title - aligned with navbar logo (matches px-4 sm:px-6 lg:px-8) */}
+      <h3 className="text-2xl font-bold text-white mb-0 p-0 m-0 pl-4 sm:pl-6 lg:pl-8 py-2">
         {title}
-      </h2>
+      </h3>
 
       {/* Carousel Container */}
       <div className="relative">
@@ -122,7 +122,7 @@ const Carousel = ({ title, children, className = "" }) => {
             onTouchMove={handleTouchMove}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="flex space-x-2 overflow-x-auto overflow-y-visible pl-4 pr-4 sm:pl-6 sm:pr-6 lg:pl-8 lg:pr-8 py-4"
+            className="flex space-x-2 overflow-x-auto overflow-y-visible pl-4 pr-4 sm:pl-6 sm:pr-6 lg:pl-8 lg:pr-8 pb-6"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', touchAction: 'pan-x', overscrollBehaviorY: 'contain' }}
           >
           {children}

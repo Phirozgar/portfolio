@@ -20,7 +20,7 @@ function App() {
   }
 
   useEffect(() => {
-    // Show loading screen: 0.7s animation + 2s wait = 2.7s total
+    // Show loading screen: 0.7s animation + buffer time
     // Then start transition
     let hideLoadingTimer = null
     
@@ -29,8 +29,8 @@ function App() {
       // After transition animation completes, hide loading
       hideLoadingTimer = setTimeout(() => {
         setShowLoading(false)
-      }, 900) // slide-out-fwd-center duration
-    }, 1300)
+      }, 700) // slide-out-fwd-center duration (0.7s)
+    }, 1000) // Reduced buffer time
 
     return () => {
       clearTimeout(transitionTimer)

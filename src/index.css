@@ -107,7 +107,7 @@
   }
   
   .netflix-section-title {
-    @apply text-2xl font-bold text-white mb-6 px-4 sm:px-6 lg:px-8;
+    @apply text-2xl font-bold text-white mb-6 pl-4 sm:pl-6 lg:pl-8 pr-4 sm:pr-6 lg:pr-8;
   }
   
   .netflix-movie-card {
@@ -201,8 +201,21 @@
   }
 
   .slide-out-fwd-center {
-    -webkit-animation: slide-out-fwd-center 0.9s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-    animation: slide-out-fwd-center 0.9s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    -webkit-animation: slide-out-fwd-center 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    animation: slide-out-fwd-center 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  }
+
+  @-webkit-keyframes slide-out-fwd-center {
+    0% {
+      -webkit-transform: translateZ(1);
+      transform: translateZ(1);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateZ(600px);
+      transform: translateZ(600px);
+      opacity: 0;
+    }
   }
 
   @keyframes slide-out-fwd-center {

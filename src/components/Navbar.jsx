@@ -38,34 +38,37 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Netflix Logo - Exact Position */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold text-red-600 cursor-pointer tracking-tight"
-            onClick={() => scrollToSection('#home')}
-            style={{ fontFamily: 'Inter, Helvetica Neue, Arial, sans-serif' }}
-          >
-            PHIROZGAR
-          </motion.div>
+          {/* Left Side - Logo and Navigation Items */}
+          <div className="flex items-center space-x-8">
+            {/* Netflix Logo - Exact Position */}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="text-2xl font-bold text-red-600 drop-shadow-[0_4px_6px_rgba(0,0,0,10)] cursor-pointer tracking-tight"
+              onClick={() => scrollToSection('#home')}
+              style={{ fontFamily: 'Inter, Helvetica Neue, Arial, sans-serif' }}
+            >
+              <img src="/images/hero/NETFLIX-phirozgar.png" alt="Phirozgar" className="w-25 h-20" />
+            </motion.div>
 
-          {/* Center Navigation - Netflix Style */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {navItems.map((item, index) => (
-              <motion.button
-                key={item.name}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-                onClick={() => scrollToSection(item.href)}
-                className="netflix-nav-item"
-              >
-                {item.name}
-              </motion.button>
-            ))}
+            {/* Navigation Items - Next to Logo */}
+            <div className="hidden lg:flex items-center space-x-8">
+              {navItems.map((item, index) => (
+                <motion.button
+                  key={item.name}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                  onClick={() => scrollToSection(item.href)}
+                  className="netflix-nav-item"
+                >
+                  {item.name}
+                </motion.button>
+              ))}
+            </div>
           </div>
 
-          {/* Right Side Icons - Netflix Style */}
+          {/* Right Side Icons - Search and Profile only */}
           <div className="flex items-center space-x-4">
             {/* Search Icon */}
             <motion.button
@@ -74,16 +77,6 @@ const Navbar = () => {
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </motion.button>
-
-            {/* Bell Icon */}
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              className="text-white hover:text-gray-300 transition-colors duration-200"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-5 5v-5zM9 12l2 2 4-4" />
               </svg>
             </motion.button>
 
