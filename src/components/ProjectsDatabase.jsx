@@ -5,7 +5,22 @@ import Top10Card from './Top10Card'
 import ProjectModal from './ProjectModal'
 import projectsData from '../data/projects.json'
 
-const Projects = () => {
+/**
+ * Projects Database Section Component
+ * 
+ * This component displays projects filtered by Database category:
+ * - Dashboard
+ * - CRUD
+ * - BlockBook
+ */
+const ProjectsDatabase = () => {
+  // Filter projects for Database category
+  const databaseProjects = projectsData.filter(project => 
+    project.title.toLowerCase().includes('dashboard') ||
+    project.title.toLowerCase().includes('crud') ||
+    project.title.toLowerCase().includes('blockbook')
+  )
+
   const [selectedProject, setSelectedProject] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -20,16 +35,16 @@ const Projects = () => {
   }
 
   return (
-    <section id="projects" className="py-2 bg-black relative z-[1]">
+    <section id="projects-database" className="py-2 bg-black relative z-[1]">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <Carousel title="All My Projects" className='pl-4'>
-          {projectsData.map((project, index) => {
-            // If project has a rank, wrap it in a numbered wrapper structure
+        <Carousel title="Projects you might like — Database" className='pl-4'>
+          {databaseProjects.map((project, index) => {
+            // Each numbered row starts from 1
             if (project.rank) {
               return (
                 <motion.div
@@ -64,7 +79,6 @@ const Projects = () => {
                 </motion.div>
               )
             }
-            // No rank - render normally
             return (
               <motion.div
                 key={project.id}
@@ -103,4 +117,4 @@ const Projects = () => {
   )
 }
 
-export default Projects
+export default ProjectsDatabase

@@ -5,7 +5,19 @@ import Top10Card from './Top10Card'
 import ProjectModal from './ProjectModal'
 import projectsData from '../data/projects.json'
 
-const Projects = () => {
+/**
+ * Projects AI Section Component
+ * 
+ * This component displays projects filtered by AI category:
+ * - PATRICK (P.A.Tr.I.C.K)
+ */
+const ProjectsAI = () => {
+  // Filter projects for AI category
+  const aiProjects = projectsData.filter(project => 
+    project.title.toLowerCase().includes('patrick') ||
+    project.title.toLowerCase().includes('p.a.tr.i.c.k')
+  )
+
   const [selectedProject, setSelectedProject] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -20,16 +32,16 @@ const Projects = () => {
   }
 
   return (
-    <section id="projects" className="py-2 bg-black relative z-[1]">
+    <section id="projects-ai" className="py-2 bg-black relative z-[1]">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <Carousel title="All My Projects" className='pl-4'>
-          {projectsData.map((project, index) => {
-            // If project has a rank, wrap it in a numbered wrapper structure
+        <Carousel title="Projects you might like — AI" className='pl-4'>
+          {aiProjects.map((project, index) => {
+            // Each numbered row starts from 1
             if (project.rank) {
               return (
                 <motion.div
@@ -64,7 +76,6 @@ const Projects = () => {
                 </motion.div>
               )
             }
-            // No rank - render normally
             return (
               <motion.div
                 key={project.id}
@@ -103,4 +114,4 @@ const Projects = () => {
   )
 }
 
-export default Projects
+export default ProjectsAI

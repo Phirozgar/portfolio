@@ -33,8 +33,14 @@ const Experience = () => {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <Carousel title="New Releases — Experience" className='pl-4'>
-          {experienceData.map((exp, index) => (
+        <Carousel title="Experience" className='pl-4'>
+          {/* Filter to show only: Web Maintenance Intern, Full Stack Intern, PARIKSHIT Management Head */}
+          {experienceData.filter(exp => 
+            exp.role.toLowerCase().includes('web maintenance intern') ||
+            exp.role.toLowerCase().includes('full stack') ||
+            exp.role.toLowerCase().includes('full stack developer') ||
+            exp.role.toLowerCase().includes('management head')
+          ).map((exp, index) => (
             <motion.div
               key={exp.id}
               initial={{ opacity: 0, x: 50 }}

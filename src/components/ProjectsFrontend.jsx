@@ -5,7 +5,28 @@ import Top10Card from './Top10Card'
 import ProjectModal from './ProjectModal'
 import projectsData from '../data/projects.json'
 
-const Projects = () => {
+/**
+ * Projects Frontend/UI Section Component
+ * 
+ * This component displays projects filtered by Frontend/UI category:
+ * - Parikshit
+ * - Dashboard
+ * - Brainwave
+ * - Blockbook
+ * - ISRO
+ * - Portfolio
+ */
+const ProjectsFrontend = () => {
+  // Filter projects for Frontend/UI category
+  const frontendProjects = projectsData.filter(project => 
+    project.title.toLowerCase().includes('parikshit') ||
+    project.title.toLowerCase().includes('dashboard') ||
+    project.title.toLowerCase().includes('brainwave') ||
+    project.title.toLowerCase().includes('blockbook') ||
+    project.title.toLowerCase().includes('isro') ||
+    project.title.toLowerCase().includes('portfolio')
+  )
+
   const [selectedProject, setSelectedProject] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -20,16 +41,16 @@ const Projects = () => {
   }
 
   return (
-    <section id="projects" className="py-2 bg-black relative z-[1]">
+    <section id="projects-frontend" className="py-2 bg-black relative z-[1]">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <Carousel title="All My Projects" className='pl-4'>
-          {projectsData.map((project, index) => {
-            // If project has a rank, wrap it in a numbered wrapper structure
+        <Carousel title="Projects you might like — Frontend / UI" className='pl-4'>
+          {frontendProjects.map((project, index) => {
+            // Each numbered row starts from 1
             if (project.rank) {
               return (
                 <motion.div
@@ -64,7 +85,6 @@ const Projects = () => {
                 </motion.div>
               )
             }
-            // No rank - render normally
             return (
               <motion.div
                 key={project.id}
@@ -103,4 +123,4 @@ const Projects = () => {
   )
 }
 
-export default Projects
+export default ProjectsFrontend

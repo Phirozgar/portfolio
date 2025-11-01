@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12 relative z-[1]">
+    <footer className="bg-gray-900 text-white relative z-[1]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -12,37 +12,6 @@ const Footer = () => {
           viewport={{ once: true }}
           className="space-y-8"
         >
-          {/* Netflix-style Footer Links */}
-          <div className="text-center">
-            <p className="text-gray-300 text-lg mb-6">
-              Questions? Contact me.
-            </p>
-            
-            <div className="flex flex-wrap justify-center gap-6 text-sm">
-              <motion.a
-                href="#"
-                whileHover={{ scale: 1.05 }}
-                className="text-gray-300 hover:text-netflix-white transition-colors duration-300"
-              >
-                LinkedIn
-              </motion.a>
-              <motion.a
-                href="#"
-                whileHover={{ scale: 1.05 }}
-                className="text-gray-300 hover:text-netflix-white transition-colors duration-300"
-              >
-                GitHub
-              </motion.a>
-              <motion.a
-                href="#"
-                whileHover={{ scale: 1.05 }}
-                className="text-gray-300 hover:text-netflix-white transition-colors duration-300"
-              >
-                Email
-              </motion.a>
-            </div>
-          </div>
-
           {/* Copyright */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
