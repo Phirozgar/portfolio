@@ -77,11 +77,11 @@ const Carousel = ({ title, children, className = "" }) => {
   }
 
   return (
-    <div className={`relative group ${className}`}>
+    <div className={`relative ${className}`}>
       {/* Section Title - aligned with navbar logo (matches px-4 sm:px-6 lg:px-8) */}
-      <h3 className="text-2xl font-bold text-white mb-0 p-0 m-0 pl-4 sm:pl-6 lg:pl-8 py-2">
+      <h2 className="text-2xl font-bold text-white mb-6 p-0 m-0 pl-4 sm:pl-6 lg:pl-8">
         {title}
-      </h3>
+      </h2>
 
       {/* Carousel Container */}
       <div className="relative">

@@ -1,53 +1,128 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 
+/**
+ * ProjectModal Component
+ * 
+ * Full-screen modal overlay that:
+ * - Renders outside DOM hierarchy using React Portal (directly under body)
+ * - Prevents page scrolling when open
+ * - Appears above all content with highest z-index
+ * - Uses fixed positioning to fill entire viewport
+ * - Includes backdrop overlay and centered content
+ */
 const ProjectModal = ({ isOpen, onClose, project }) => {
-  // Close modal on Escape key
+  const [portalContainer, setPortalContainer] = useState(null)
+
+  // Create portal container and manage body scroll lock
   useEffect(() => {
-    const handleEscape = (e) => {
-      if (e.key === 'Escape') {
-        onClose()
-      }
-    }
-
     if (isOpen) {
-      document.addEventListener('keydown', handleEscape)
-      document.body.style.overflow = 'hidden'
-    }
+      // Create or get portal container
+      let container = document.getElementById('modal-portal-root')
+      if (!container) {
+        container = document.createElement('div')
+        container.id = 'modal-portal-root'
+        container.style.position = 'fixed'
+        container.style.top = '0'
+        container.style.left = '0'
+        container.style.width = '100%'
+        container.style.height = '100%'
+        container.style.pointerEvents = 'none'
+        container.style.zIndex = '999999'
+        document.body.appendChild(container)
+      }
+      setPortalContainer(container)
 
-    return () => {
-      document.removeEventListener('keydown', handleEscape)
-      document.body.style.overflow = 'unset'
+      // Prevent body scroll - store original overflow to restore later
+      const originalOverflow = document.body.style.overflow
+      const originalPaddingRight = document.body.style.paddingRight
+      
+      // Calculate scrollbar width to prevent layout shift
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
+      
+      document.body.style.overflow = 'hidden'
+      if (scrollbarWidth > 0) {
+        document.body.style.paddingRight = `${scrollbarWidth}px`
+      }
+
+      // Close modal on Escape key
+      const handleEscape = (e) => {
+        if (e.key === 'Escape') {
+          onClose()
+        }
+      }
+      document.addEventListener('keydown', handleEscape)
+
+      return () => {
+        document.removeEventListener('keydown', handleEscape)
+        // Restore original body styles
+        document.body.style.overflow = originalOverflow
+        document.body.style.paddingRight = originalPaddingRight
+      }
+    } else {
+      // Clean up portal container when modal closes
+      const container = document.getElementById('modal-portal-root')
+      if (container && container.parentNode) {
+        container.parentNode.removeChild(container)
+      }
+      setPortalContainer(null)
     }
   }, [isOpen, onClose])
 
-  if (!isOpen || !project) return null
+  // Don't render if modal is closed, no project, or portal not ready
+  if (!isOpen || !project || !portalContainer) return null
 
-  return (
-    <AnimatePresence>
+  // Modal content to be portaled
+  const modalContent = (
+    <AnimatePresence mode="wait">
+      {/* Fixed modal container - fills entire viewport */}
       <motion.div
+        key="modal-overlay"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.3 }}
-        className="fixed inset-0 z-50 flex items-center justify-center"
+        className="fixed inset-0 flex items-center justify-center p-4"
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: 999999,
+          pointerEvents: 'auto'
+        }}
       >
-        {/* Backdrop */}
+        {/* Dark transparent backdrop overlay - dims the background */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="absolute inset-0 bg-black/15"
+          className="absolute inset-0 bg-black/70 backdrop-blur-sm"
           onClick={onClose}
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            zIndex: 1
+          }}
         />
 
-        {/* Modal Content */}
+        {/* Modal Content - centered above backdrop */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.9, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.9, y: 20 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="relative w-full max-w-3xl md:max-w-4xl mx-4 bg-black rounded-lg overflow-hidden shadow-2xl max-h-[90vh] md:max-h-[92vh] my-6 md:my-10 flex flex-col"
+          className="relative w-full max-w-4xl mx-auto bg-black rounded-lg overflow-hidden shadow-2xl max-h-[85vh] flex flex-col z-10"
+          onClick={(e) => e.stopPropagation()}
+          style={{
+            position: 'relative',
+            zIndex: 10
+          }}
         >
           {/* Close Button */}
           <motion.button
@@ -61,7 +136,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
             </svg>
           </motion.button>
 
-          {/* Video/Image Section */}
+          {/* Video/Image Section - show full image with contain */}
           <div className="relative bg-gray-900" style={{ height: '48vh', minHeight: '260px' }}>
             <div 
               className="w-full h-full bg-cover bg-center bg-no-repeat"
@@ -152,11 +227,6 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
                   {project.description}
                 </p>
                 
-                <p className="text-gray-400 leading-relaxed">
-                  This project showcases my expertise in modern web development, combining cutting-edge technologies 
-                  with intuitive user experience design. Built with a focus on performance and scalability, it demonstrates 
-                  my ability to create robust applications that meet real-world requirements.
-                </p>
               </div>
 
               {/* Sidebar Info */}
@@ -215,6 +285,9 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
       </motion.div>
     </AnimatePresence>
   )
+
+  // Render modal using portal directly under body to avoid stacking context issues
+  return createPortal(modalContent, portalContainer)
 }
 
 export default ProjectModal
