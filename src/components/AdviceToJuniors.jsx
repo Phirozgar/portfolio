@@ -32,25 +32,6 @@ const AdviceToJuniors = () => {
           ))}
         </div>
       </section>
-
-      {/* More About Me Section */}
-      <section className="more-about-me">
-        <h2>More About Me 🌱</h2>
-        <p>
-          I’m passionate about designing experiences that are both visually appealing and
-          technically sound. Whether it’s building interactive web apps or creating 
-          interfaces for space tech projects — I believe design and logic should coexist.
-        </p>
-        <p>
-          Outside of tech, I enjoy photography, storytelling, and brainstorming creative projects
-          with my peers. Collaboration is my favorite way to learn and grow.
-        </p>
-      </section>
-
-      {/* Footer */}
-      <footer className="footer">
-        <p>© 2025 Phirozgar Irani | Built with ❤️ using React</p>
-      </footer>
     </>
   );
 };

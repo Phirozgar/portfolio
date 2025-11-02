@@ -24,12 +24,12 @@ const HeroSection = () => {
 
       {/* Hero Text Overlay */}
       <div className="hero-content">
-        <h1 className="hero-title glass-text">Hi, I'm Phirozgar Irani</h1>
-        <p className="hero-subtitle glass-text">
+        <h1 className="hero-title glass-text">Hi! I'm Phirozgar Irani</h1>
+        <p className="hero-subtitle glass-text mt-4">
           Designer • Developer • Real World Problem Solver
         </p>
-        <h1 className="mt-4 text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg text-white/90">
-          THIS is My College Journey
+        <h1 className="my-4 text-6xl md:text-5xl font-extrabold tracking-tight drop-shadow-lg text-white/90">
+          THIS IS MY COLLEGE JOURNEY
         </h1>
       </div>
     </section>

@@ -44,6 +44,10 @@
   transform: rotate(5deg);
 }
 
+.stack:hover .card .image {
+  background-image: "/images/pics/thats-right-boy.jpeg";
+}
+
 .stack:hover .card:before {
   transform: translateY(-2%) rotate(-4deg);
 }
