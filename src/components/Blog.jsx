@@ -13,13 +13,11 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0f0c29] via-[#302b63] to-[#24243e] text-white overflow-x-hidden">
       <FloatingNav />
-      <div className="fade-overlay"><HeroSection /></div>
-      <SectionDivider from="#000000" to="#1b1035" />
-      <div className="fade-overlay"><EducationBento /></div>
-      <div className="fade-overlay"><ManipalSection /></div>
-      {/* <PlacementSection /> */}
-      <AdviceToJuniors />
+      <HeroSection />
       <MoreAboutMe />
+      <EducationBento/>
+      <ManipalSection/>
+      <AdviceToJuniors/>
     </div>
   );
 };

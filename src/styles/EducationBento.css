@@ -10,7 +10,7 @@
   padding: 40px 16px;
   width: 100%;
   box-sizing: border-box;
-  background: transparent;
+  background: linear-gradient(135deg, #fff7f3, #f1f9ff, #fef6ff);
 }
 
 /* 6 columns x auto rows; each row height is 120px by default */
@@ -33,10 +33,11 @@
 
 /* Base style for each grid box */
 .grid-box {
-  cursor: default;
+  cursor: pointer;
   color: #0b1020; /* dark text for pastel backgrounds */
   font-size: 20px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-weight: 700;
@@ -51,6 +52,21 @@
   border: 1px solid rgba(255,255,255,0.25);
   padding: 8px;
   text-align: center;
+  position: relative;
+}
+
+.chapter-number {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: rgba(0,0,0,0.7);
+}
+
+.chapter-text {
+  font-size: 16px;
+  margin-top: 20px;
 }
 
 /* Hover effect: slightly lift and brighten */
@@ -69,27 +85,27 @@
 
 /* Pastel gradient palettes — alternate for variety */
 .grid-box:nth-child(6n+1) {
-  background: linear-gradient(180deg, #ffd7e2 0%, #ffecf5 100%);
+  background: linear-gradient(180deg, #c77dff 0%, #e1b3ff 100%);
   color: #2b1532;
 }
 .grid-box:nth-child(6n+2) {
-  background: linear-gradient(180deg, #e6f7ff 0%, #f0fbff 100%);
+  background: linear-gradient(180deg, #74b9ff 0%, #a8d8ff 100%);
   color: #0b2a3a;
 }
 .grid-box:nth-child(6n+3) {
-  background: linear-gradient(180deg, #fff4d6 0%, #fffaf0 100%);
+  background: linear-gradient(180deg, #ffd666 0%, #ffeaa7 100%);
   color: #4a3218;
 }
 .grid-box:nth-child(6n+4) {
-  background: linear-gradient(180deg, #e9f8ec 0%, #f5fef6 100%);
+  background: linear-gradient(180deg, #55efc4 0%, #a8e6cf 100%);
   color: #143b2f;
 }
 .grid-box:nth-child(6n+5) {
-  background: linear-gradient(180deg, #f1e8ff 0%, #faf6ff 100%);
+  background: linear-gradient(180deg, #fd79a8 0%, #fdcb6e 100%);
   color: #2c125f;
 }
 .grid-box:nth-child(6n+0) {
-  background: linear-gradient(180deg, #ffdede 0%, #fff6f6 100%);
+  background: linear-gradient(180deg, #e17055 0%, #fab1a0 100%);
   color: #4a1414;
 }
 

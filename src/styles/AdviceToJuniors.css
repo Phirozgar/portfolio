@@ -1,21 +1,15 @@
-/* Layout fix: cards side by side */
+/* Layout fix: cards in grid */
 .advice-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   padding: 1rem;
-  scroll-snap-type: x mandatory;
+  justify-items: center;
 }
 
 .container {
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-  width:60px;
-  height:300px;
+  width: 200px;
+  height: 300px;
 }
 
 /* ✨ Pastel Gradient Themes */
@@ -164,16 +158,12 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
+  background: rgba(245, 222, 253, 0.9);
 }
 
 #card::before {
   content: "";
-  background: linear-gradient(
-    43deg,
-    rgb(65, 88, 208) 0%,
-    rgb(200, 80, 192) 46%,
-    rgb(255, 204, 112) 100%
-  );
+  background: rgba(255, 255, 255, 0.8);
   filter: blur(2rem);
   opacity: 30%;
   width: 100%;

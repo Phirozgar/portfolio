@@ -1,5 +1,5 @@
 .moreabout-section {
-  background: linear-gradient(135deg, #fff7f3, #f1f9ff, #fef6ff);
+  background: linear-gradient(135deg, #f6aeff, #cf7243,#ffffff, #b5dbf8, #f7cdfd);
   color: #333;
   padding: 6rem 2rem;
   display: flex;
@@ -42,10 +42,19 @@
 
 .stack:hover {
   transform: rotate(5deg);
+  transition: all 0.25s ease-in-out;
 }
 
+.stack .card .image {
+  background-image: url("/images/pics/MUTBI-bag.jpeg");
+  background-size: cover;
+  background-position: center;
+  transition: all 0.25s ease-in-out;
+}
 .stack:hover .card .image {
-  background-image: "/images/pics/thats-right-boy.jpeg";
+  background-image: url("/images/pics/thats-right-boy.jpeg");
+  background-size: cover;
+  background-position: center;
 }
 
 .stack:hover .card:before {
