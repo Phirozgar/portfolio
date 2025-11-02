@@ -1,0 +1,130 @@
+.seeyoulater-section {
+  background: linear-gradient(135deg, #f6aeff, #cf7243,#ffffff, #b5dbf8, #f7cdfd);
+  color: #333;
+  padding: 6rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.seeyoulater-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(246, 174, 255, 0.3), rgba(207, 112, 67, 0.3), rgba(255, 255, 255, 0.3), rgba(181, 219, 248, 0.3), rgba(247, 205, 253, 0.3), rgba(245, 245, 245, 0));
+  pointer-events: none;
+}
+
+.seeyoulater-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+  max-width: 1000px;
+}
+
+.seeyoulater-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.seeyoulater-text h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.seeyoulater-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.8;
+}
+
+/* stack animation pasted below */
+.stack {
+  width: 55%;
+  max-width: 400px;
+  transition: 0.25s ease;
+}
+
+.stack:hover {
+  transform: rotate(5deg);
+  transition: all 0.25s ease-in-out;
+}
+
+.stack .card .image {
+  background-image: url("/images/pics/thats-right-boy.jpeg");
+  background-size: cover;
+  background-position: center;
+  transition: all 0.25s ease-in-out;
+}
+.stack:hover .card .image {
+  background-image: url("/images/pics/MUTBI-bag.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.stack:hover .card:before {
+  transform: translateY(-2%) rotate(-4deg);
+}
+
+.stack:hover .card:after {
+  transform: translateY(2%) rotate(4deg);
+}
+
+.card {
+  aspect-ratio: 3 / 2;
+  border: 4px solid;
+  background-color: #fff;
+  position: relative;
+  transition: 0.15s ease;
+  cursor: pointer;
+  padding: 5% 5% 15% 5%;
+}
+
+.card:before,
+.card:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border: 4px solid;
+  background-color: #fff;
+  transform-origin: center center;
+  z-index: -1;
+  transition: 0.15s ease;
+  top: 0;
+  left: 0;
+}
+
+.card:before {
+  transform: translateY(-2%) rotate(-6deg);
+}
+
+.card:after {
+  transform: translateY(2%) rotate(6deg);
+}
+
+.image {
+  width: 100%;
+  border: 4px solid;
+  background-color: #eee;
+  aspect-ratio: 1 / 1;
+  position: relative;
+}
+
+.browser-warning {
+  margin-bottom: 4rem;
+}
+
+@supports (aspect-ratio: 1 / 1) {
+  .browser-warning {
+    display: none;
+  }
+}

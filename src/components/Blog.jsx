@@ -8,6 +8,8 @@ import "../styles/Blog.css";
 import PlacementSection from "../components/PlacementSection";
 import AdviceToJuniors from "../components/AdviceToJuniors";
 import MoreAboutMe from "../components/MoreAboutMe";
+import SeeYouLater from "../components/SeeYouLater";
+import Footer from "../components/Footer";
 
 const Blog = () => {
   return (
@@ -18,6 +20,8 @@ const Blog = () => {
       <EducationBento/>
       <ManipalSection/>
       <AdviceToJuniors/>
+      <SeeYouLater />
+      <Footer />
     </div>
   );
 };
