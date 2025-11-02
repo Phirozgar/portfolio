@@ -15,7 +15,7 @@ const MoreAboutMe = () => {
           <p>
             Beyond coding, I am working on building relations, helping out my peers, 
             and finding new ways to solves my problems. And BADMINTON! and FOOTBALL! I love those as well.
-            <br/><span className="text-yellow-500 font-bold font-netflix text-2xl">Life might be full of ups and downs, but all you gotta do to get back on track is...</span>
+            <br/><span className="text-rose-800 font-bold font-netflix text-2xl">Life might be full of ups and downs, but all you gotta do to get back on track is...</span>
             <br/><span className="text-orange-500 font-bold font-netflix text-4xl mt-5">Just smile, happiness will find you!</span>
           </p>
         </div>

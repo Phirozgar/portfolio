@@ -44,11 +44,10 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Home', href: '#home' },
-    { name: 'Education', href: '#education' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'My College Journey', href: '#education' },
+    { name: 'More About Me', href: '#moreabout' },
+    { name: 'Advice to Juniors', href: '#advice' },
+    { name: 'See You Later', href: '#seeyoulater' },
   ]
 
   const scrollToSection = (href) => {

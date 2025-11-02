@@ -1,14 +1,15 @@
 /* Layout fix: cards in grid */
 .advice-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
   padding: 1rem;
   justify-items: center;
 }
 
 .container {
-  width: 200px;
+  width: 100%;
+  max-width: 250px;
   height: 300px;
 }
 
@@ -33,7 +34,7 @@
 } */
 
 /* Optional: smooth scrollbar styling */
-/* .advice-container::-webkit-scrollbar {
+.advice-container::-webkit-scrollbar {
   height: 8px;
 }
 .advice-container::-webkit-scrollbar-thumb {
@@ -46,14 +47,20 @@
 
 .advice-section {
   padding: 4rem 2rem;
-  background: linear-gradient(
-    180deg,
-    #f5defd 0%,        
-    #dae7ff 35%,       
-    #f3ffe8 70%,       
-    #ffffff 100%       
-  );
+background: linear-gradient(135deg, #fff7f3, #f1f9ff, #fef6ff);
   text-align: center;
+  position: relative;
+}
+
+.advice-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(255, 247, 243, 0.3), rgba(241, 249, 255, 0.3), rgba(254, 246, 255, 0.3), rgba(245, 245, 245, 0));
+  pointer-events: none;
 }
 
 
@@ -61,6 +68,16 @@
   font-size: 2.2rem;
   margin-bottom: 2rem;
   color: #333;
+  position: relative;
+  display: inline-block;
+  transform: rotate(-2deg);
+  background: linear-gradient(135deg, #f73073, #ffac41);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding: 0.5rem 1rem;
+  border-radius: 0px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.35);
 }
 
 /* Individual Card Animation Starts */
@@ -78,37 +95,42 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  border-radius: 20px;
+  border-radius: 0px;
+  border-color: #333;
+  border-width: 5px;
   transition: 700ms;
   background: linear-gradient(
     43deg,
-    rgb(65, 88, 208) 0%,
-    rgb(200, 80, 192) 46%,
-    rgb(255, 204, 112) 100%
+    rgb(134, 154, 255) 0%,
+    rgb(255, 173, 250) 46%,
+    rgb(255, 218, 149) 100%
   );
   overflow: hidden;
 }
 
 .subtitle {
   transform: translateY(10px);
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(0, 0, 0, 0.783);
   text-align: center;
   font-size: 0.9rem;
   padding-bottom: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+  opacity: 0;
 }
 
 .title {
   transform: translateY(10px);
-  opacity: 0;
+  opacity: 1;
   transition: 300ms ease-in-out;
   position: absolute;
   top: 40%;
   font-size: 1.2rem;
   font-weight: bold;
-  color: white;
+  color: rgba(0, 0, 0, 0.783);
 }
 
-.tracker:hover ~ #card .title {
+.tracker:hover ~ #card .subtitle {
   opacity: 1;
 }
 
@@ -141,7 +163,6 @@
 
 .tracker:hover ~ #card {
   transition: 300ms;
-  filter: brightness(1.1);
 }
 
 .container:hover #card::before {
@@ -171,6 +192,11 @@
   position: absolute;
   z-index: -1;
   transition: 200ms;
+}
+
+.container:hover #card::before {
+  background: rgba(255, 255, 255, 0.9);
+  opacity: 80%;
 }
 
 .tracker {

@@ -16,16 +16,7 @@
   position: relative;
 }
 
-.grid-wrapper::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100px;
-  background: linear-gradient(to bottom, rgba(255, 247, 243, 0.3), rgba(241, 249, 255, 0.3), rgba(254, 246, 255, 0.3), rgba(245, 245, 245, 0));
-  pointer-events: none;
-}
+/* Remove the fade effect from EducationBento */
 
 /* Single big container for all 34 post-it notes */
 .my-custom-grid-container {

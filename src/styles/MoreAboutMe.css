@@ -1,10 +1,28 @@
 .moreabout-section {
-  background: linear-gradient(135deg, #f6aeff, #cf7243,#ffffff, #b5dbf8, #f7cdfd);
+  background: linear-gradient(135deg, #f6aeff, #d49677,#ffffff, #b5dbf8, #f7cdfd);
   color: #333;
   padding: 6rem 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.moreabout-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom,
+    rgba(255, 247, 243, 0.6) 0%,
+    rgba(241, 249, 255, 0.5) 25%,
+    rgba(254, 246, 255, 0.4) 50%,
+    rgba(245, 245, 245, 0.3) 75%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  pointer-events: none;
 }
 
 .moreabout-content {
@@ -19,6 +37,7 @@
 .moreabout-text {
   flex: 1;
   min-width: 300px;
+  color: black;
 }
 
 .moreabout-text h2 {

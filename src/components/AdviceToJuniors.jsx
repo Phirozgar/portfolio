@@ -9,13 +9,15 @@ const AdviceToJuniors = () => {
     { title: "It's okay to fail, but get back up quicker", subtitle: "Mistakes are stepping stones" },
     { title: "Take Initiative & Ownership", subtitle: "Initiative > Instructions" },
     { title: "Surround yourself with friends that want to grow", subtitle: "The right company matters the most" },
+    { title: "ALWAYS believe in your parents", subtitle: "They know what's right for you, they were also as once, as young as you are right now" },
+    { title: "Workout/Gym/Play EVERY SINGLE DAY", subtitle: "Lose your body in the grind and you will eventually lose your mind as well" },
   ];
 
   return (
     <>
       {/* Advice Section */}
       <section className="advice-section">
-        <h2 className="advice-heading">Advice to Juniors 💡</h2>
+        <h1 className="advice-heading">Advice to Juniors 💡</h1>
         <div className="advice-container">
           {adviceList.map((advice, index) => (
             <div key={index} className="container noselect">

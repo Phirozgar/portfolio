@@ -5,7 +5,8 @@ const ManipalSection = () => {
   return (
     <section className="manipal-section">
       <h2 className="manipal-title">
-        Things in Manipal that really defined me
+        Things in Manipal that gave me
+        <br/><span className="text-6xl italic border-black border-t-gray-950">Character Development</span>
       </h2>
 
       <div className="manipal-cards">

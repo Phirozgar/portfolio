@@ -1,15 +1,27 @@
 /* ===== SECTION STYLING ===== */
 .manipal-section {
   width: 100%;
-  min-height: 100vh;
-  background: radial-gradient(circle at top, #000000 0%, #0a0a0a 100%);
+  max-height: 80vh;
+  background: linear-gradient(135deg, #fff7f3, #f1f9ff, #fef6ff);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 4rem 1rem;
-  color: #fff;
+  padding: 2rem 1rem 4rem;
+  color: #333;
   overflow: hidden;
+  position: relative;
+}
+
+.manipal-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(255, 247, 243, 0.3), rgba(241, 249, 255, 0.3), rgba(254, 246, 255, 0.3), rgba(245, 245, 245, 0));
+  pointer-events: none;
 }
 
 .manipal-title {
@@ -33,7 +45,7 @@
   max-width: 1200px;
   height: 300px;
   padding: 0.4em;
-  background: #1a1a1a;
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   box-shadow: 0 0 30px rgba(255, 90, 145, 0.2);
 }
@@ -42,15 +54,25 @@
   flex: 1;
   overflow: hidden;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 0;
   transition: all 0.5s ease;
-  border: 1px solid #ff5a91;
+  border: 3px solid #000;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #212121;
+  background: linear-gradient(135deg, #ffeaa7, #a8e6cf, #e1b3ff, #a8d8ff, #fab1a0);
   position: relative;
+  box-shadow: 5px 5px 0px rgba(0,0,0,0.3);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
 }
+
+.manipal-cards p:nth-child(1) { background: linear-gradient(135deg, #ffeaa7, #ffd666); }
+.manipal-cards p:nth-child(2) { background: linear-gradient(135deg, #a8e6cf, #55efc4); }
+.manipal-cards p:nth-child(3) { background: linear-gradient(135deg, #e1b3ff, #c77dff); }
+.manipal-cards p:nth-child(4) { background: linear-gradient(135deg, #a8d8ff, #74b9ff); }
+.manipal-cards p:nth-child(5) { background: linear-gradient(135deg, #fab1a0, #e17055); }
+.manipal-cards p:nth-child(6) { background: linear-gradient(135deg, #fdcb6e, #fd79a8); }
+.manipal-cards p:nth-child(7) { background: linear-gradient(135deg, #ffeaa7, #ffd666); }
 
 .manipal-cards p:hover {
   flex: 4;
@@ -65,7 +87,7 @@
   transform: rotate(-90deg);
   transition: all 0.5s ease;
   text-transform: uppercase;
-  color: #ff568e;
+  color: #000000;
   font-weight: 500;
   letter-spacing: 0.1em;
 }

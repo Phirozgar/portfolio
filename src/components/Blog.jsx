@@ -14,9 +14,9 @@ import Footer from "../components/Footer";
 const Blog = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0f0c29] via-[#302b63] to-[#24243e] text-white overflow-x-hidden">
-      <FloatingNav />
-      <HeroSection />
-      <MoreAboutMe />
+      <FloatingNav/>
+      <HeroSection/>
+      <MoreAboutMe/>
       <EducationBento/>
       <ManipalSection/>
       <AdviceToJuniors/>

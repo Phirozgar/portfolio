@@ -9,19 +9,29 @@ const EducationBento = () => {
   const [chapters, setChapters] = useState([]);
   const [noteColors, setNoteColors] = useState([]);
 
-  // Generate random pastel colors for post-it notes
-  const generateRandomPastelColor = () => {
-    const hue = Math.floor(Math.random() * 360);
-    const saturation = 70 + Math.floor(Math.random() * 20); // 70-90%
-    const lightness = 80 + Math.floor(Math.random() * 15); // 80-95%
-    return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+  // Original pastel color palette
+  const pastelColors = ['#ffeaa7', '#a8e6cf', '#e1b3ff', '#a8d8ff', '#fab1a0', '#fdcb6e'];
+
+  // Shuffle array function
+  const shuffleArray = (array) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
   };
 
   useEffect(() => {
     setChapters(chaptersData);
-    // Generate random colors for all 34 notes
-    const colors = Array.from({ length: 34 }, () => generateRandomPastelColor());
-    setNoteColors(colors);
+    // Create shuffled color array for all 34 notes
+    const shuffledColors = [];
+    for (let i = 0; i < 34; i++) {
+      shuffledColors.push(pastelColors[i % pastelColors.length]);
+    }
+    // Shuffle the colors randomly
+    const finalColors = shuffleArray(shuffledColors);
+    setNoteColors(finalColors);
   }, []);
 
   const handleBoxClick = (chapterNumber) => {

@@ -1,5 +1,5 @@
 .seeyoulater-section {
-  background: linear-gradient(135deg, #f6aeff, #cf7243,#ffffff, #b5dbf8, #f7cdfd);
+  background: linear-gradient(135deg, #f6aeff,#ffffff, #b5dbf8, #f7cdfd);
   color: #333;
   padding: 6rem 2rem;
   display: flex;
@@ -14,8 +14,14 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 100px;
-  background: linear-gradient(to bottom, rgba(246, 174, 255, 0.3), rgba(207, 112, 67, 0.3), rgba(255, 255, 255, 0.3), rgba(181, 219, 248, 0.3), rgba(247, 205, 253, 0.3), rgba(245, 245, 245, 0));
+  height: 200px;
+  background: linear-gradient(to bottom,
+    rgba(255, 247, 243, 0.6) 0%,
+    rgba(241, 249, 255, 0.5) 25%,
+    rgba(254, 246, 255, 0.4) 50%,
+    rgba(245, 245, 245, 0.3) 75%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
   pointer-events: none;
 }
 
@@ -31,6 +37,7 @@
 .seeyoulater-text {
   flex: 1;
   min-width: 300px;
+  color: black;
 }
 
 .seeyoulater-text h2 {
@@ -46,38 +53,38 @@
 }
 
 /* stack animation pasted below */
-.stack {
+.stack-syl {
   width: 55%;
   max-width: 400px;
   transition: 0.25s ease;
 }
 
-.stack:hover {
+.stack-syl:hover {
   transform: rotate(5deg);
   transition: all 0.25s ease-in-out;
 }
 
-.stack .card .image {
-  background-image: url("/images/pics/thats-right-boy.jpeg");
+.stack-syl .card-syl .image {
+  background-image: url("/images/pics/treasurer.jpeg");
   background-size: cover;
   background-position: center;
   transition: all 0.25s ease-in-out;
 }
-.stack:hover .card .image {
-  background-image: url("/images/pics/MUTBI-bag.jpeg");
+.stack-syl:hover .card-syl .image {
+  background-image: url("/images/pics/king.jpeg");
   background-size: cover;
   background-position: center;
 }
 
-.stack:hover .card:before {
+.stack-syl:hover .card-syl:before {
   transform: translateY(-2%) rotate(-4deg);
 }
 
-.stack:hover .card:after {
+.stack-syl:hover .card-syl:after {
   transform: translateY(2%) rotate(4deg);
 }
 
-.card {
+.card-syl {
   aspect-ratio: 3 / 2;
   border: 4px solid;
   background-color: #fff;
@@ -87,8 +94,8 @@
   padding: 5% 5% 15% 5%;
 }
 
-.card:before,
-.card:after {
+.card-syl:before,
+.card-syl:after {
   content: "";
   display: block;
   position: absolute;
@@ -103,11 +110,11 @@
   left: 0;
 }
 
-.card:before {
+.card-syl:before {
   transform: translateY(-2%) rotate(-6deg);
 }
 
-.card:after {
+.card-syl:after {
   transform: translateY(2%) rotate(6deg);
 }
 
