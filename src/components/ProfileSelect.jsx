@@ -1,19 +1,22 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React from 'react';
+import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
-const ProfileSelect = ({ onProfileSelect }) => {
+const ProfileSelect = () => {
+  const navigate = useNavigate();
   const profiles = [
     { id: 'student', name: 'Student', icon: '🎓', color: 'from-blue-500 to-purple-600' },
     { id: 'recruiter', name: 'Recruiter', icon: '💼', color: 'from-green-500 to-blue-600' },
     { id: 'kevin', name: 'Kevin Feige', icon: '🎬', color: 'from-red-500 to-pink-600' },
-    { id: 'mom', name: 'Mom', icon: '❤️', color: 'from-pink-500 to-purple-600' }
-  ]
+  ];
 
   const handleProfileClick = (profileId) => {
     if (profileId === 'recruiter') {
-      onProfileSelect(profileId)
+      navigate('/recruiter');
+    } else if (profileId === 'student') {
+      navigate('/student');
     }
-  }
+  };
 
   return (
     <div className="min-h-screen bg-black flex items-center justify-center">
