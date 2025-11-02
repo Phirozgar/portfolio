@@ -5,6 +5,9 @@ import ManipalSection from "../components/ManipalSection.jsx";
 import EducationBento from "../components/EducationBento";
 import SectionDivider from "../components/SectionDivider.jsx";
 import "../styles/Blog.css";
+import PlacementSection from "../components/PlacementSection";
+import AdviceToJuniors from "../components/AdviceToJuniors";
+import MoreAboutMe from "../components/MoreAboutMe";
 
 const Blog = () => {
   return (
@@ -13,8 +16,10 @@ const Blog = () => {
       <div className="fade-overlay"><HeroSection /></div>
       <SectionDivider from="#000000" to="#1b1035" />
       <div className="fade-overlay"><EducationBento /></div>
-      <SectionDivider from="#1b1035" to="#000000" />
       <div className="fade-overlay"><ManipalSection /></div>
+      {/* <PlacementSection /> */}
+      <AdviceToJuniors />
+      <MoreAboutMe />
     </div>
   );
 };
