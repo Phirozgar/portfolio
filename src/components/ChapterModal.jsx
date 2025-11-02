@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../styles/ChapterModal.css";
+import chaptersData from "../data/chapters.json";
 
-const ChapterModal = ({ isOpen, onClose, chapterNumber, chapterName }) => {
+const ChapterModal = ({ isOpen, onClose, chapterNumber, chapterName, chapterNotes }) => {
   const [currentChapter, setCurrentChapter] = useState(chapterNumber);
 
   useEffect(() => {
@@ -24,10 +25,14 @@ const ChapterModal = ({ isOpen, onClose, chapterNumber, chapterName }) => {
   };
 
   const handleNextChapter = () => {
-    if (currentChapter < 18) {
+    if (currentChapter < 34) {
       setCurrentChapter(currentChapter + 1);
     }
   };
+
+  const currentChapterData = chaptersData.find(ch => ch.id === currentChapter);
+  const displayName = currentChapterData?.name || chapterName || `Chapter ${currentChapter}`;
+  const displayNotes = currentChapterData?.notes || chapterNotes || "Placeholder for Chapter notes. Add your content here.";
 
   if (!isOpen) return null;
 
@@ -36,13 +41,13 @@ const ChapterModal = ({ isOpen, onClose, chapterNumber, chapterName }) => {
       <div className="chapter-modal">
         <div className="chapter-header">
           <h2 className="chapter-title">Chapter {currentChapter}</h2>
-          <h3 className="chapter-name">{chapterName || `Chapter ${currentChapter} of My College Journey`}</h3>
+          <h3 className="chapter-name">{displayName}</h3>
         </div>
 
         <div className="chapter-content">
-          <p>This is the content for Chapter {currentChapter}. You can add your story, experiences, and memories here.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <div className="chapter-notes">
+            {displayNotes}
+          </div>
         </div>
 
         <div className="chapter-navigation">
@@ -59,7 +64,7 @@ const ChapterModal = ({ isOpen, onClose, chapterNumber, chapterName }) => {
           <button
             className="nav-button next-button"
             onClick={handleNextChapter}
-            disabled={currentChapter === 18}
+            disabled={currentChapter === 34}
           >
             Next →
           </button>
