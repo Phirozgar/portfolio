@@ -7,7 +7,7 @@ const ProfileSelect = () => {
   const profiles = [
     { id: 'student', name: 'Student', icon: '🎓', color: 'from-blue-500 to-purple-600' },
     { id: 'recruiter', name: 'Recruiter', icon: '💼', color: 'from-green-500 to-blue-600' },
-    { id: 'kevin', name: 'Kevin Feige', icon: '🎬', color: 'from-red-500 to-pink-600' },
+    { id: 'kevin', name: 'Placement Secr', icon: '🏢', color: 'from-purple-600 to-pink-400' },
   ];
 
   const handleProfileClick = (profileId) => {
@@ -75,11 +75,10 @@ const ProfileSelect = () => {
           className="mt-16"
         >
           <p className="text-gray-400 text-lg">
-            Click on "Recruiter" to view the portfolio
-            <span className="text-xs">
+            Click on "Recruiter" to view my portfolio
+            <span className="text-sm">
             <br/>Click on "Student" to view my college journey so far (It's my blog 😅)
-            <br/>Click on "Kevin Feige" to see my movie reviews and thoughts
-            <br/>Click on "Mom" to see a special message for my mom
+            <br/>Click on "Placement Sec" to see 3rd Yr MIT Manipal's internship stats (Still in progress)
             </span>
           </p>
         </motion.div>

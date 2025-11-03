@@ -39,10 +39,10 @@ const FloatingNav = () => {
       {/* Center Navigation */}
       <nav className="fixed top-6 left-1/2 -translate-x-1/2 flex gap-8 text-lg font-semibold text-white/90 z-40 bg-black/20 backdrop-blur-md rounded-full px-6 py-3 border border-white/10 shadow-lg">
         <a href="#hero" className="hover:text-pink-400 transition-all">Hero</a>
-        <a href="#moreaboutme" className="hover:text-blue-400 transition-all">MoreAboutMe</a>
-        <a href="#education" className="hover:text-yellow-400 transition-all">Education</a>
-        <a href="#manipal" className="hover:text-green-400 transition-all">Manipal</a>
-        <a href="#advice" className="hover:text-purple-400 transition-all">Advice</a>
+        <a href="#education" className="hover:text-blue-400 transition-all">Education</a>
+        <a href="#manipal" className="hover:text-yellow-400 transition-all">Manipal</a>
+        <a href="#advice" className="hover:text-green-400 transition-all">Advice</a>
+        <a href="#moreaboutme" className="hover:text-purple-400 transition-all">MoreAboutMe</a>
       </nav>
 
       {/* Profile Dropdown - Top Right */}
@@ -83,7 +83,7 @@ const FloatingNav = () => {
               Recruiter
             </button>
             <button className="w-full text-left px-4 py-2 text-gray-300 hover:bg-gray-800 transition-colors duration-200">
-              Kevin Feige
+              Placement Sec
             </button>
           </motion.div>
         )}

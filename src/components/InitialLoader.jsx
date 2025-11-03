@@ -30,7 +30,7 @@ const InitialLoader = () => {
   if (showLoading) {
     return (
       <div className="min-h-screen bg-black flex items-center justify-center">
-        <h1 className={`text-5xl lg:text-6xl font-bold text-red-600 tracking-in-expand ${isTransitioning ? 'slide-out-fwd-center' : ''}`}>
+        <h1 className={`text-5xl lg:text-6xl xs:text-3xl font-bold text-red-600 tracking-in-expand ${isTransitioning ? 'slide-out-fwd-center' : ''}`}>
           PHIROZGAR IRANI
         </h1>
       </div>
