@@ -32,6 +32,9 @@ function App() {
         <div id="experience"><Experience /></div>
         <div id="projects"><Projects /></div>
         <div id="skills"><ToolsLanguages /></div>
+        <ProjectsFrontend/>
+        <ProjectsDatabase/>
+        <ProjectsAI/>
         <div id="contact"><Contact /></div>
       </main>
       {/* <Footer /> */}
