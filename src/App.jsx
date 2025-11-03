@@ -27,15 +27,12 @@ function App() {
             7. Projects you might like - AI (PATRICK)
             8. Contact me
         */}
-        <Hero />
-        <Education />
-        <Experience />
-        <Projects />
-        <ToolsLanguages />
-        <ProjectsDatabase />
-        <ProjectsFrontend />
-        <ProjectsAI />
-        <Contact />
+        <div id="home"><Hero /></div>
+        <div id="education"><Education /></div>
+        <div id="experience"><Experience /></div>
+        <div id="projects"><Projects /></div>
+        <div id="skills"><ToolsLanguages /></div>
+        <div id="contact"><Contact /></div>
       </main>
       {/* <Footer /> */}
     </div>

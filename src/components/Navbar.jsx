@@ -44,10 +44,11 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Home', href: '#home' },
-    { name: 'My College Journey', href: '#education' },
-    { name: 'More About Me', href: '#moreabout' },
-    { name: 'Advice to Juniors', href: '#advice' },
-    { name: 'See You Later', href: '#seeyoulater' },
+    { name: 'Education', href: '#education' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Contact', href: '#contact' },
   ]
 
   const scrollToSection = (href) => {
@@ -96,16 +97,16 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Right Side Icons - Search and Profile only */}
+          {/* Right Side Icons - Download Resume, Search and Profile */}
           <div className="flex items-center space-x-4">
-            {/* Search Icon */}
+            {/* Download Resume Button */}
             <motion.button
-              whileHover={{ scale: 1.1 }}
-              className="text-white hover:text-gray-300 transition-colors duration-200"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => window.open('/Phirozgar_MITManipal.pdf', '_blank')}
+              className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 text-sm font-semibold rounded transition-colors duration-200 shadow-lg"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
+              DOWNLOAD RESUME
             </motion.button>
 
             {/* Profile Avatar */}
@@ -147,9 +148,6 @@ const Navbar = () => {
                   </button>
                   <button className="w-full text-left px-4 py-2 text-gray-300 hover:bg-gray-800 transition-colors duration-200">
                     Kevin Feige
-                  </button>
-                  <button className="w-full text-left px-4 py-2 text-gray-300 hover:bg-gray-800 transition-colors duration-200">
-                    Mom
                   </button>
                 </motion.div>
               )}

@@ -159,8 +159,12 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
 
             {/* Title and Action Buttons */}
             <div className="absolute bottom-6 left-6 right-6">
-              <h1 className="text-4xl font-bold text-white mb-4">
-                {project.title}
+              <h1 className="text-4xl font-bold text-white mb-4 relative">
+                {/* Background contrast for readability */}
+                <span className="absolute inset-0 bg-black/60 backdrop-blur-sm rounded-lg -z-10"></span>
+                <span className="relative z-10 px-3 py-2 block">
+                  {project.title}
+                </span>
               </h1>
 
               {/* Action Buttons */}

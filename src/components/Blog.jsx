@@ -15,12 +15,12 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0f0c29] via-[#302b63] to-[#24243e] text-white overflow-x-hidden">
       <FloatingNav/>
-      <HeroSection/>
-      <MoreAboutMe/>
-      <EducationBento/>
-      <ManipalSection/>
-      <AdviceToJuniors/>
-      <SeeYouLater />
+      <div id="hero"><HeroSection/></div>
+      <div id="moreaboutme"><MoreAboutMe/></div>
+      <div id="education"><EducationBento/></div>
+      <div id="manipal"><ManipalSection/></div>
+      <div id="advice"><AdviceToJuniors/></div>
+      <div id="seeyoulater"><SeeYouLater /></div>
       <Footer />
     </div>
   );

@@ -43,7 +43,7 @@
   }
   
   .netflix-navbar {
-    @apply fixed top-6 left-0 right-0 z-50 transition-all duration-300;
+    @apply fixed top-0 left-0 right-0 z-50 transition-all duration-300;
   }
   
   .netflix-navbar-scrolled {
