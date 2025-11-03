@@ -9,16 +9,16 @@ const HeroSection = () => {
       <div className="carousel-3d-container">
         <div className="card-3d">
           {/* 🔹 Replace each div background with your own images */}
-          <div style={{ backgroundImage: 'url("/public/images/portfolio/CR.jpeg")', backgroundSize: "cover" }}></div>
-          <div style={{ backgroundImage: 'url("/public/images/portfolio/bhanap.jpeg")', backgroundSize: "cover" }}></div>
-          <div style={{ backgroundImage: 'url("/public/images/pics/airport.jpeg")', backgroundSize: "cover" }}></div>
-          <div style={{ backgroundImage: 'url("/public/images/pics/class-photo.jpeg")', backgroundSize: "cover" }}></div>
-          <div style={{ backgroundImage: 'url("public/images/pics/hahaha-this-aged-well.jpeg")', backgroundSize: "cover" }}></div>
-          <div style={{ backgroundImage: 'url("/public/images/portfolio/tausif.jpeg")', backgroundSize: "cover" }}></div>
-          <div style={{ backgroundImage: 'url("public/images/pics/KB-mit.jpeg")', backgroundSize: "cover" }}></div>
-          <div style={{ backgroundImage: 'url("public/images/pics/MUTBI-bag.jpeg")', backgroundSize: "cover" }}></div>
-          <div style={{ backgroundImage: 'url("public/images/pics/proshow-ladies.jpeg")', backgroundSize: "cover" }}></div>
-          <div style={{ backgroundImage: 'url("public/images/pics/tda-club-expo.jpeg")', backgroundSize: "cover" }}></div>
+          <div style={{ backgroundImage: 'url("/images/portfolio/CR.jpeg")', backgroundSize: "cover" }}></div>
+          <div style={{ backgroundImage: 'url("/images/portfolio/bhanap.jpeg")', backgroundSize: "cover" }}></div>
+          <div style={{ backgroundImage: 'url("/images/pics/airport.jpeg")', backgroundSize: "cover" }}></div>
+          <div style={{ backgroundImage: 'url("/images/pics/class-photo.jpeg")', backgroundSize: "cover" }}></div>
+          <div style={{ backgroundImage: 'url("/images/pics/hahaha-this-aged-well.jpeg")', backgroundSize: "cover" }}></div>
+          <div style={{ backgroundImage: 'url("/images/portfolio/tausif.jpeg")', backgroundSize: "cover" }}></div>
+          <div style={{ backgroundImage: 'url("/images/pics/MUTBI-bag.jpeg")', backgroundSize: "cover" }}></div>
+          <div style={{ backgroundImage: 'url("/images/pics/KB-mit.jpeg")', backgroundSize: "cover" }}></div>
+          <div style={{ backgroundImage: 'url("/images/pics/proshow-ladies.jpeg")', backgroundSize: "cover" }}></div>
+          <div style={{ backgroundImage: 'url("/images/pics/tda-club-expo.jpeg")', backgroundSize: "cover" }}></div>
         </div>
       </div>
 
